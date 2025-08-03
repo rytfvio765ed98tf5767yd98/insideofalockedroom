@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script data-goatcounter="https://annoise.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js">
+    </script>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <title>inside of a locked room | maja braumberger</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+      font-family: sans-serif;
+      color: #aaa;
+      position: relative;
+    }
+    
+    header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .header-title {
+      font-family: sans-serif;
+      font-size: 29px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .header-links {
+      font-family: sans-serif;
+      font-size: 32px;
+      color: #ffffff;
+      display: flex;
+      gap: 2px;
+    }
+
+    .header-links a {
+      text-decoration: none;
+      color: #888888;
+      transition: color 0.2s ease;
+    }
+
+    .header-links a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+.video-container {
+  width: 320px;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .logo {
+      width: 69px;
+      height: auto;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+
+    .copyright {
+      font-size: 10px;
+      color: rgb(93, 93, 93);
+      font-family: sans-serif;
+    }
+
+    .separator {
+      color: #9b9b9b; 
+      font-size: 32px;
+      line-height: 1;
+      margin: 0 15px;
+      user-select: none; 
+      font-weight: bold;
+    }
+
+ 
+    .header-links .separator,
+ {
+      display: inline-flex;
+      align-items: center;
+      height: 19px;
+      line-height: 1;
+    }
+
+    .corner-image {
+      position: fixed;
+      bottom: 12px;
+      left: 12px;
+      z-index: 20;
+    }
+
+    .corner-image img {
+      width: 112px;
+      height: auto;
+      opacity: 1;
+      border-radius: 21px;
+    }
+
+    .corner-link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .corner-label {
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffffff;
+      font-size: 10px;
+      font-family: monospace;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1px 4px;
+      border-radius: 2px;
+      letter-spacing: 2px;
+      pointer-events: none;
+    }
+
+    .header-sub-links {
+      display: flex;
+      gap: 15px;
+      font-size: 23px;
+      color: #888;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+
+    .header-sub-links a {
+      text-decoration: none;
+      color: #888;
+      transition: color 0.2s ease;
+      padding: 0 0px;
+    }
+
+    .header-sub-links a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .header-sub-links .separator {
+      color: #9a9a9a;
+      font-weight: normal;
+      margin: 0 59px;
+    }
+    
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    top: 20px;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: center !important;
+    gap: 6px;
+  }
+
+  .header-sub-links, .header-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-links {
+    margin-top: 10px;
+    gap: 53px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  /* Ukrycie separatora między writings a gallery na mobilnym */
+  .header-links .separator {
+    display: none;
+  }
+
+  .separator {
+    margin: 0 8px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    height: 1em;
+  }
+}
+
+
+
+  </style>
+</head>
+  
+<body>
+  
+<header class="header">
+  <div class="header-left" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+    <div class="header-title">inside of a locked room</div>
+    
+    <nav class="header-sub-links">
+      <a href="about.html">about</a>
+      <span class="separator">❍</span>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+  
+  <nav class="header-links" id="mobileMenu">
+    <a href="works.html">works</a>
+    <span class="separator">|</span>
+    <a href="writings.html">writings</a>
+  </nav>
+</header>
+
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="index.webm" type="video/webm" />
+  </video>
+</div>
+
+<footer>
+  <img class="logo" src="misc/logo/logo.png" alt="Logo" />
+  <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
+</footer>
+
+<div class="corner-image">
+  <a href="sitemap.html" class="corner-link">
+    <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
+    <span class="corner-label">s&nbsp;i&nbsp;t&nbsp;e&nbsp;m&nbsp;a&nbsp;p</span>
+  </a>
+</div>
+<div class="corner-image" style="right: 24px; left: auto;">
+  <a href="newsletter.html" class="corner-link">
+    <img src="misc/icons/newslettericon.jpg" alt="Newsletter Icon" />
+    <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
+  </a>
+</div>
+
+<script>
+  console.log("Script loaded");
+  
+</script>
+
+</body>
+</html>
