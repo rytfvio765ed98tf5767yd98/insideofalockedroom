@@ -283,19 +283,18 @@
     const proceedBtn = document.getElementById("proceedBtn");
     const storageKey = "mobileWarningDismissed";
 
-    if (isMobileDevice() && !localStorage.getItem(storageKey)) {
-      modal.style.display = "block";
-      overlay.style.display = "block";
-      // zablokuj scrollowanie strony
-      document.body.style.overflow = "hidden";
-    }
+modal.style.display = "block";
+overlay.style.display = "block";
+document.body.style.overflow = "hidden";
 
-    proceedBtn.addEventListener("click", function() {
-      modal.style.display = "none";
-      overlay.style.display = "none";
-      localStorage.setItem(storageKey, "true");
-      document.body.style.overflow = ""; // odblokuj scrollowanie
-    });
+
+
+proceedBtn.addEventListener("click", function() {
+  modal.style.display = "none";
+  overlay.style.display = "none";
+  document.body.style.overflow = ""; // odblokuj scrollowanie
+});
+
   });
 </script>
 
