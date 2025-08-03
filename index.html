@@ -226,11 +226,76 @@
     <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
   </a>
 </div>
+  
+  
+<div id="overlay" style="
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+"></div>
+
+<div id="mobileWarningModal" style="
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  color: #eee;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  z-index: 1000;
+  max-width: 90vw;
+  text-align: center;
+  font-family: sans-serif;
+">
+  <p style="font-size: 1.2em; margin-bottom: 20px;">
+    This website may not be fully usable on small devices.
+  </p>
+  <button id="proceedBtn" style="
+    background-color: #555;
+    color: #eee;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  ">I wish to proceed</button>
+</div>
 
 <script>
   console.log("Script loaded");
+  document.addEventListener("DOMContentLoaded", function() {
+  
+    function isMobileDevice() {
+      return window.innerWidth <= 800;
+    }
 
+    const modal = document.getElementById("mobileWarningModal");
+    const overlay = document.getElementById("overlay");
+    const proceedBtn = document.getElementById("proceedBtn");
+    const storageKey = "mobileWarningDismissed";
+
+    if (isMobileDevice() && !localStorage.getItem(storageKey)) {
+      modal.style.display = "block";
+      overlay.style.display = "block";
+      // zablokuj scrollowanie strony
+      document.body.style.overflow = "hidden";
+    }
+
+    proceedBtn.addEventListener("click", function() {
+      modal.style.display = "none";
+      overlay.style.display = "none";
+      localStorage.setItem(storageKey, "true");
+      document.body.style.overflow = ""; // odblokuj scrollowanie
+    });
+  });
 </script>
+
 
 </body>
 </html>
