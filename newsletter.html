@@ -3,6 +3,8 @@
 <head>
   <link rel="icon" href="favicon.png" type="image/png">
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
   <title>newsletter | mb</title>
   <style>
     html, body {
@@ -34,20 +36,29 @@
       height: 25vh; 
       background-color: #000;
       z-index: 10; 
-      pointer-events: none;
+      
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
     .bottom-text {
-      color: #888;
+      color: #5d5d5d;
       text-align: center;
       font-style: italic;
       font-family: monospace;
       font-size: 1.3em;
       opacity: 0.8;
     }
+        .privacy-link {
+      color: #8d8d8d;
+      font-size: 1em;
+      text-decoration: underline;
+      font-family: sans-serif;
+          font-style: normal;
+    
+    }
+
   </style>
 </head>
 <body>
@@ -58,8 +69,18 @@
   </iframe>
 
   <div class="bottom-rectangle">
-    <div class="bottom-text">no need to sign up/log-in to g**gle!
-      <p>if the form doesn't show up, please refresh this page.</p></div>
+    <div class="bottom-text">
+      <br>
+      no need to sign up/log-in to g**gle!
+      <p>if the form doesn't show up, please refresh this page.</p>
+      <p>
+        <br>
+        <br>
+        <br><br><br>
+        <br>
+        <a href="privacypolicy.txt" class="privacy-link">privacy policy</a>
+      </p>
+    </div>
   </div>
 
 </body>
