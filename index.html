@@ -1,303 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script data-goatcounter="https://annoise.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js">
-    </script>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <meta charset="UTF-8">
-  <title>inside of a locked room | maja braumberger</title>
-  
-
+  <meta charset="UTF-8" />
+  <title>???</title>
   <style>
     html, body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #000;
-      font-family: sans-serif;
-      color: #aaa;
-      position: relative;
+      background: #000;
+      overflow: hidden;
     }
-    
-    header {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
-    }
-
-    .header-title {
-      font-family: sans-serif;
-      font-size: 29px;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .header-links {
-      font-family: sans-serif;
-      font-size: 32px;
-      color: #ffffff;
-      display: flex;
-      gap: 2px;
-    }
-
-    .header-links a {
-      text-decoration: none;
-      color: #888888;
-      transition: color 0.2s ease;
-    }
-
-    .header-links a:hover {
-      color: #fff;
-      text-decoration: none;
-    }
-
-.video-container {
-  width: 320px;
-  aspect-ratio: 16 / 9;
-  border-radius: 10px;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
-    .video-container video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    canvas {
       display: block;
     }
-
-    footer {
-      position: absolute;
-      bottom: 12px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .logo {
-      width: 69px;
-      height: auto;
-      opacity: 0.8;
-      margin-bottom: 6px;
-    }
-
-    .copyright {
-      font-size: 10px;
-      color: rgb(93, 93, 93);
-      font-family: sans-serif;
-    }
-
-    .separator {
-      color: #9b9b9b; 
-      font-size: 32px;
-      line-height: 1;
-      margin: 0 15px;
-      user-select: none; 
-      font-weight: bold;
-    }
-
- 
-    .header-links .separator,
- {
-      display: inline-flex;
-      align-items: center;
-      height: 19px;
-      line-height: 1;
-    }
-
-    .corner-image {
-      position: fixed;
-      bottom: 12px;
-      left: 12px;
-      z-index: 20;
-    }
-
-    .corner-image img {
-      width: 130px;
-      height: auto;
-      opacity: 1;
-      border-radius: 21px;
-    }
-
-    .corner-link {
-      position: relative;
-      display: inline-block;
-      text-decoration: none;
-    }
-
-    .corner-label {
-      position: absolute;
-      bottom: -3px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #ffffff;
-      font-size: 12px;
-      font-family: monospace;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 1px 4px;
-      border-radius: 2px;
-      letter-spacing: 3px;
-      pointer-events: none;
-    }
-
-    .header-sub-links {
-      display: flex;
-      gap: 15px;
-      font-size: 23px;
-      color: #888;
-      font-family: sans-serif;
-      font-weight: bold;
-    }
-
-    .header-sub-links a {
-      text-decoration: none;
-      color: #888;
-      transition: color 0.2s ease;
-      padding: 0 0px;
-    }
-
-    .header-sub-links a:hover {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .header-sub-links .separator {
-      color: #9a9a9a;
-      font-weight: normal;
-      margin: 0 59px;
-    }
-    
-}
-
-
-
   </style>
 </head>
-  
 <body>
-  
-<header class="header">
-  <div class="header-left" style="flex-direction: column; align-items: flex-start; gap: 6px;">
-    <div class="header-title">inside of a locked room</div>
-    
-    <nav class="header-sub-links">
-      <a href="about.html">about</a>
-      <span class="separator">❍</span>
-      <a href="contact.html">contact</a>
-    </nav>
-  </div>
-  
-  <nav class="header-links" id="mobileMenu">
-    <a href="works.html">works</a>
-    <span class="separator">|</span>
-    <a href="writings.html">writings</a>
-  </nav>
-</header>
-
-<div class="video-container">
-<video autoplay muted loop playsinline>
-  <source src="index.webm" type="video/webm">
-  <source src="index.mp4" type="video/mp4">
-  
-</video>
-
-</div>
-
-<footer>
-  <img class="logo" src="misc/logo/logo.png" alt="Logo" />
-  <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
-</footer>
-
-<div class="corner-image">
-  <a href="sitemap.html" class="corner-link">
-    <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
-    <span class="corner-label">s&nbsp;i&nbsp;t&nbsp;e&nbsp;m&nbsp;a&nbsp;p</span>
-  </a>
-</div>
-<div class="corner-image" style="right: 24px; left: auto;">
-  <a href="newsletter.html" class="corner-link">
-    <img src="misc/icons/newslettericon.jpg" alt="Newsletter Icon" />
-    <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
-  </a>
-</div>
-  
-  
-<div id="overlay" style="
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 999;
-"></div>
-
-<div id="mobileWarningModal" style="
-  display:none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #222;
-  color: #eee;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.8);
-  z-index: 1000;
-  max-width: 90vw;
-  text-align: center;
-  font-family: sans-serif;
-">
-  <p style="font-size: 1.2em; margin-bottom: 20px;">
-    This website may not be fully usable on small devices.
-  </p>
-  <button id="proceedBtn" style="
-    background-color: #555;
-    color: #eee;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  ">I wish to proceed</button>
-</div>
+<canvas id="canvas"></canvas>
 
 <script>
-  console.log("Script loaded");
-  document.addEventListener("DOMContentLoaded", function() {
-  
-    function isMobileDevice() {
-      return window.innerWidth <= 800;
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+
+  const cellSize = 10;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const cols = Math.floor(canvas.width / cellSize);
+  const rows = Math.floor(canvas.height / cellSize);
+
+  const grid = Array.from({ length: rows }, () =>
+    Array.from({ length: cols }, () => ({ active: false, age: 0 }))
+  );
+
+  const chars = ['░', '▒', '▓', '█', '.', ':', '+', '*', '#'];
+  ctx.font = `${cellSize - 1}px monospace`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  let activePoints = [];
+  const centerX = Math.floor(cols / 2);
+  const centerY = Math.floor(rows / 2);
+  grid[centerY][centerX].active = true;
+  activePoints.push([centerX, centerY]);
+
+  let nearbySeedAdded = false;
+
+  function drawCell(x, y, age) {
+    const char = chars[Math.floor(Math.random() * chars.length)];
+    const fade = Math.pow(Math.max(0, 1 - age * 0.005), 1.5);
+    ctx.fillStyle = `rgba(255,255,255,${fade})`;
+    ctx.fillText(char, x * cellSize + cellSize / 2, y * cellSize + cellSize / 2);
+  }
+
+  function addNearbySeed() {
+    const radius = 5;
+    for (let i = 0; i < 100; i++) {
+      const dx = Math.floor(Math.random() * (radius * 2 + 1)) - radius;
+      const dy = Math.floor(Math.random() * (radius * 2 + 1)) - radius;
+      const nx = centerX + dx;
+      const ny = centerY + dy;
+      if (
+        nx >= 0 && ny >= 0 &&
+        nx < cols && ny < rows &&
+        !grid[ny][nx].active
+      ) {
+        grid[ny][nx].active = true;
+        grid[ny][nx].age = 1;  
+        activePoints.push([nx, ny]);
+        console.log("Dodano punkt blisko centrum:", nx, ny);
+        break;
+      }
+    }
+  }
+
+  function spread() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    let newPoints = [];
+
+    activePoints.forEach(([x, y]) => {
+      const neighbors = [
+        [x + 1, y], [x - 1, y],
+        [x, y + 1], [x, y - 1],
+        [x + 1, y + 1], [x - 1, y - 1],
+        [x - 1, y + 1], [x + 1, y - 1]
+      ];
+
+      neighbors.forEach(([nx, ny]) => {
+        if (
+          nx >= 0 && ny >= 0 &&
+          nx < cols && ny < rows &&
+          !grid[ny][nx].active
+        ) {
+         
+          const prob = grid[y][x].age === 0 ? 0.06 : 0.02;
+          if (Math.random() < prob) {
+            grid[ny][nx].active = true;
+            grid[ny][nx].age = 0;
+            newPoints.push([nx, ny]);
+          }
+        }
+      });
+    });
+
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < cols; x++) {
+        if (grid[y][x].active) {
+          drawCell(x, y, grid[y][x].age);
+          grid[y][x].age += 0.5;
+        }
+      }
     }
 
-    const modal = document.getElementById("mobileWarningModal");
-    const overlay = document.getElementById("overlay");
-    const proceedBtn = document.getElementById("proceedBtn");
-    const storageKey = "mobileWarningDismissed";
+    activePoints = [...activePoints, ...newPoints].slice(-500);
 
-modal.style.display = "block";
-overlay.style.display = "block";
-document.body.style.overflow = "hidden";
+    if (!nearbySeedAdded) {
+      const ages = activePoints.map(([x, y]) => grid[y][x].age);
+      const maxAge = Math.max(...ages);
+      if (maxAge > 5) {
+        addNearbySeed();
+        nearbySeedAdded = true;
+      }
+    }
 
+    requestAnimationFrame(spread);
+  }
 
-
-proceedBtn.addEventListener("click", function() {
-  modal.style.display = "none";
-  overlay.style.display = "none";
-  document.body.style.overflow = ""; // odblokuj scrollowanie
-});
-
-  });
+  spread();
 </script>
-
 
 </body>
 </html>
