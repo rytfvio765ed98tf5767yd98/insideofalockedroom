@@ -421,23 +421,49 @@
   </div>
 
   <script>
-    const mainImage = document.getElementById('mainImage');
-    const thumbnails = document.querySelectorAll('.right-half ul li img');
-    const ul = document.querySelector('.right-half ul');
+const mainImage = document.getElementById('mainImage');
+const thumbnails = document.querySelectorAll('.right-half ul li img');
+const ul = document.querySelector('.right-half ul');
 
-    thumbnails.forEach(thumbnail => {
-      thumbnail.addEventListener('click', () => {
-        mainImage.src = thumbnail.src;
-        mainImage.alt = thumbnail.alt;
-        mainImage.classList.add('flash');
-        setTimeout(() => mainImage.classList.remove('flash'), 300);
-        mainImage.classList.add('bright');
-        ul.classList.add('dimmed');
-      });
-    });
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', () => {
+    mainImage.src = thumbnail.src;
+    mainImage.alt = thumbnail.alt;
+    mainImage.classList.add('flash');
+    setTimeout(() => mainImage.classList.remove('flash'), 300);
+    mainImage.classList.add('bright');
+    ul.classList.add('dimmed');
 
-    ul.addEventListener('mouseover', () => ul.classList.remove('dimmed'));
-    ul.addEventListener('mouseout', () => ul.classList.add('dimmed'));
+    // zatrzymaj demo scroll po kliknięciu
+    if (scrollInterval) {
+      clearInterval(scrollInterval);
+      scrollInterval = null;
+    }
+  });
+});
+
+ul.addEventListener('mouseover', () => ul.classList.remove('dimmed'));
+ul.addEventListener('mouseout', () => ul.classList.add('dimmed'));
+
+// --- DEMO SCROLL ---
+let scrollInterval = null;
+
+window.addEventListener('load', () => {
+  const maxScrollTop = ul.scrollHeight - ul.clientHeight;
+
+  if (maxScrollTop > 0) {
+    let direction = 1;
+    scrollInterval = setInterval(() => {
+      if (direction === 1) {
+        ul.scrollTo({ top: maxScrollTop, behavior: 'smooth' });
+      } else {
+        ul.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      direction *= -1;
+    }, 3000);
+  }
+});
+
   </script>
 </body>
 </html>
