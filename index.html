@@ -265,8 +265,9 @@
 
 <div id="versionSelectOverlay">
   <h1>choose your version</h1>
-  <button class="version-btn" onclick="window.location.href='index-mobile.html'">mobile</button>
-  <button class="version-btn" onclick="document.getElementById('versionSelectOverlay').style.display='none'">desktop</button>
+<button class="version-btn" onclick="chooseVersion('mobile')">mobile</button>
+<button class="version-btn" onclick="chooseVersion('desktop')">desktop</button>
+
   
   <div class="version-note">
     this website was designed with computer displays in mind<br>
@@ -328,6 +329,30 @@
   <img src="misc/icons/newslettericon.jpg" alt="Newsletter Icon" />
   <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
 </a>
+  
+  
+<script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const savedVersion = localStorage.getItem("siteVersion");
+    const overlay = document.getElementById("versionSelectOverlay");
+
+    if (savedVersion === "desktop") {
+      overlay.style.display = "none";
+    } else if (savedVersion === "mobile") {
+      window.location.href = "index-mobile.html";
+    }
+  });
+
+  function chooseVersion(version) {
+    localStorage.setItem("siteVersion", version);
+    if (version === "mobile") {
+      window.location.href = "index-mobile.html";
+    } else if (version === "desktop") {
+      document.getElementById("versionSelectOverlay").style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
