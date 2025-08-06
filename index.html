@@ -257,6 +257,25 @@
   letter-spacing: 2px;
 }
 
+    /* --- Środek headera: button-gif --- */
+    .header-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .header-center img {
+      width: 88px;
+      height: 31px;
+      display: block;
+    }
+
+    /* Ukryj na mobile */
+    @media (max-width: 768px) {
+      .header-center {
+        display: none;
+      }
+    }
   </style>
 </head>
   
@@ -291,6 +310,13 @@
       <span class="separator">❍</span>
       <a href="contact.html">contact</a>
     </nav>
+  </div>
+
+  <!-- ŚRODEK: button-gif -->
+  <div class="header-center">
+    <a href="index.html">
+      <img src="majabraumberger-button.gif" alt="Maja Braumberger Button" />
+    </a>
   </div>
   
   <nav class="header-links" id="mobileMenu">
