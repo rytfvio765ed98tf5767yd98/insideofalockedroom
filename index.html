@@ -133,13 +133,7 @@
       text-align: center;
     }
 
-    .logo {
-      width: 69px;
-      height: auto;
-      opacity: 1;
-      margin-bottom: 6px;
-      border-radius: 50px;
-    }
+
 
     .copyright {
       font-size: 10px;
@@ -276,7 +270,20 @@
         display: none;
       }
     }
+    
+    .logo-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: auto;
+  opacity: 1;
+  border-radius: 50px;
+  z-index: 30; 
+}
+
   </style>
+  
 </head>
   
 <body>
@@ -312,7 +319,7 @@
     </nav>
   </div>
 
-  <!-- ŚRODEK: button-gif -->
+ 
   <div class="header-center">
     <a href="index.html">
       <img src="majabraumberger-button.gif" alt="Maja Braumberger Button" />
@@ -333,29 +340,32 @@
   </video>
 </div>
 
+<img class="logo-fixed" src="misc/logo/logo.png" alt="Logo" />
+
 <footer>
-  <img class="logo" src="misc/logo/logo.png" alt="Logo" />
   <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
 </footer>
 
 
-<a href="sitemap.html" class="corner-image left">
+<!-- GUESTBOOK -->
+<a href="https://annoise.atabook.org/" class="corner-image left" style="bottom: 150px;">
+  <img src="misc/icons/guestbookicon.webp" alt="Guestbook Icon" />
+  <span class="corner-label">g&nbsp;u&nbsp;e&nbsp;s&nbsp;t&nbsp;b&nbsp;o&nbsp;o&nbsp;k</span>
+</a>
+
+<!-- NEWSLETTER -->
+<a href="newsletter.html" class="corner-image left" style="bottom: 280px;">
+  <img src="misc/icons/newslettericon.jpg" alt="Newsletter Icon" />
+  <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
+</a>
+
+<!-- SITEMAP -->
+<a href="sitemap.html" class="corner-image left" style="bottom: 20px;">
   <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
   <span class="corner-label">s&nbsp;i&nbsp;t&nbsp;e&nbsp;m&nbsp;a&nbsp;p</span>
 </a>
 
 
-<a href="https://annoise.atabook.org/" class="corner-image right" style="bottom: 150px;">
-  <img src="misc/icons/guestbookicon.webp" alt="Guestbook Icon" />
-  <span class="corner-label">g&nbsp;u&nbsp;e&nbsp;s&nbsp;t&nbsp;b&nbsp;o&nbsp;o&nbsp;k</span>
-</a>
-
-
-<a href="newsletter.html" class="corner-image right">
-  <img src="misc/icons/newslettericon.jpg" alt="Newsletter Icon" />
-  <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
-</a>
-  
   
 <script>
 
