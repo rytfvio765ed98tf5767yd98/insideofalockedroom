@@ -271,7 +271,13 @@
       }
     }
     
-    .logo-fixed {
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo-fixed {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -279,8 +285,10 @@
   height: auto;
   opacity: 1;
   border-radius: 50px;
-  z-index: 30; 
+  z-index: 30;
+  animation: float 3s ease-in-out infinite;
 }
+
 
   </style>
   
@@ -395,5 +403,6 @@
 
 </body>
 </html>
+
 
 
