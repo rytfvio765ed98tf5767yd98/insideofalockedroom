@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>message</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      font-family: sans-serif;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #text-container {
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    .fade {
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+
+    .visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="text-container">
+    <span id="part1" class="fade">you can call me a "slacktivist"...</span>
+    <span id="part2" class="fade" style="margin-left: 10px;">while visiting my self-made website</span>
+  </div>
+
+  <script>
+    const part1 = document.getElementById('part1');
+    const part2 = document.getElementById('part2');
+
+  setTimeout(() => {
+      part1.classList.add('visible');
+    }, 1000);
+
+    
+    setTimeout(() => {
+      part2.classList.add('visible');
+    }, 4000);
+
+  
+    setTimeout(() => {
+      window.location.href = "https://majabraumberger.com/index";
+    }, 9000);
+  </script>
+
+</body>
+</html>
