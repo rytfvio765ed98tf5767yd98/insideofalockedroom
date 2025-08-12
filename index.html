@@ -293,6 +293,14 @@
   animation: float 3s ease-in-out infinite;
 }
 
+.header-center-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
 
   </style>
   
@@ -302,14 +310,25 @@
   
 
 <div id="versionSelectOverlay">
-  <h1>choose your version</h1>
-<button class="version-btn" onclick="chooseVersion('mobile')">mobile</button>
-<button class="version-btn" onclick="chooseVersion('desktop')">desktop</button>
+  <div class="header-center-overlay">
 
-  
+<map name="noaimini12b">
+<area href="https://baccyflap.com/noai" shape="rect" coords="42,0,132,62" target="_blank" alt="no ai webring" title="no ai webring">
+<area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="0,0,40,62" alt="previous" title="previous">
+<area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="134,0,174,62" alt="next" title="next">
+</map>
+<img style="width:176px;image-rendering:pixelated;filter: grayscale(100%);" usemap="#noaimini12b" src="https://baccyflap.com/noai/miniwidget12.gif" alt="a green printed circuit board with two golden triangles pointing left and right. on the pcb is written THE NO AI WEBRING where the AI is written in the spot where a chip ought to be, but isn't">
+  </div>
+
+  <h1>choose your version</h1>
+
+  <div class="version-buttons">
+    <button class="version-btn" onclick="chooseVersion('mobile')">mobile</button>
+    <button class="version-btn" onclick="chooseVersion('desktop')">desktop</button>
+  </div>
+
   <div class="version-note">
-    this website was designed with computer displays in mind<br>
-    <br>
+    this website was designed with computer displays in mind<br><br>
     and is best experienced that way
   </div>
 
@@ -317,6 +336,7 @@
     follow the noise
   </div>
 </div>
+
 
 
 
@@ -333,7 +353,7 @@
 
  
   <div class="header-center">
-<map name="noaimini12">
+<map name="noaimini16">
   <area href="https://baccyflap.com/noai" shape="rect" coords="21,0,66,31" target="_blank" alt="no ai webring" title="no ai webring">
   <area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="0,0,20,31" alt="previous" title="previous">
   <area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="67,0,87,31" alt="next" title="next">
