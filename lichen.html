@@ -65,7 +65,7 @@
         !grid[ny][nx].active
       ) {
         grid[ny][nx].active = true;
-        grid[ny][nx].age = 1;  // ustawiamy wiek na 1, żeby rozprzestrzenianie było szybsze
+        grid[ny][nx].age = 1;  
         activePoints.push([nx, ny]);
         console.log("Dodano punkt blisko centrum:", nx, ny);
         break;
@@ -93,7 +93,7 @@
           nx < cols && ny < rows &&
           !grid[ny][nx].active
         ) {
-          // wyższe prawdopodobieństwo rozprzestrzeniania dla młodych punktów
+          
           const prob = grid[y][x].age === 0 ? 0.06 : 0.02;
           if (Math.random() < prob) {
             grid[ny][nx].active = true;
@@ -132,3 +132,4 @@
 
 </body>
 </html>
+
