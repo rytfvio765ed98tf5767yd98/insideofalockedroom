@@ -251,20 +251,24 @@
   letter-spacing: 2px;
 }
 
-    /* --- Środek headera: button-gif --- */
+ 
     .header-center {
-      position: absolute;
+      position: fixed;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    .header-center img {
-      width: 88px;
-      height: 31px;
-      display: block;
-    }
+.header-center {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center; 
+  gap: 12px; 
+}
 
-    /* Ukryj na mobile */
+
+  
     @media (max-width: 768px) {
       .header-center {
         display: none;
@@ -329,7 +333,19 @@
 
  
   <div class="header-center">
-    <a href="index.html">
+<map name="noaimini12">
+  <area href="https://baccyflap.com/noai" shape="rect" coords="21,0,66,31" target="_blank" alt="no ai webring" title="no ai webring">
+  <area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="0,0,20,31" alt="previous" title="previous">
+  <area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="67,0,87,31" alt="next" title="next">
+</map>
+
+<img
+  usemap="#noaimini12"
+  src="https://baccyflap.com/noai/miniwidget12.gif"
+  alt="a green printed circuit board with two golden triangles pointing left and right. on the pcb is written THE NO AI WEBRING where the AI is written in the spot where a chip ought to be, but isn't"
+  style="filter: grayscale(100%);"
+/>
+<a href="index.html">
       <img src="majabraumberger-button.gif" alt="Maja Braumberger Button" />
     </a>
   </div>
@@ -348,10 +364,7 @@
   </video>
 </div>
 
-<a href="message.html">
-  <img class="logo-fixed" src="misc/logo/clippy.jpg" alt="Logo" />
-</a>
-
+<img class="logo-fixed" src="misc/logo/clippy.jpg" alt="Logo" />
 
 <footer>
   <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
@@ -403,6 +416,5 @@
 
 </body>
 </html>
-
 
 
