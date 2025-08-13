@@ -157,45 +157,59 @@
       line-height: 1;
     }
 
-    .corner-image {
-      position: fixed;
-      bottom: 20px;
-      width: 120px;
-      border-radius: 10px;
-      background: #0d0d0d;
-      border: 2px solid rgba(255,255,255,0.08);
-      transition: border-color 0.3s;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      z-index: 20;
-    }
+.side-panel {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(10, 10, 10, 0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 20px 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 25;
+}
 
-    .corner-image:hover {
-      border-color: rgba(255,255,255,0.25);
-    }
+.panel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
 
-    .corner-image img {
-      width: 100px;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 0px;
-    }
+.panel-item img {
+  width: 96px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
 
-    .corner-label {
-      color: #eee;
-      font-size: 16px;
-      letter-spacing: -3px;
-      font-family: monospace;
-      padding-bottom: 6px;
-      user-select: none;
-      pointer-events: none;
-    }
+.panel-item span {
+  margin-top: 6px;
+  color: #ddd;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: monospace;
+  text-transform: lowercase;
+  text-align: center;
+}
 
-    .corner-image.left { left: 20px; }
-    .corner-image.right { right: 20px; }
+.panel-item:hover {
+  transform: translateY(-4px);
+}
+
+.panel-item:hover img {
+  transform: scale(1.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
 
     .header-sub-links {
       display: flex;
@@ -281,7 +295,7 @@
   100% { transform: translateY(0px); }
 }
 
-.logo-fixed {
+.logo-fixed-right {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -290,8 +304,19 @@
   opacity: 1;
   border-radius: 50px;
   z-index: 30;
+}
+  .logo-fixed-left {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;  
+  width: 80px;
+  height: auto;
+  opacity: 1;
+  border-radius: 50%;
+  z-index: 30;
   animation: float 3s ease-in-out infinite;
 }
+
 
 .header-center-overlay {
   display: flex;
@@ -380,8 +405,9 @@
 </div>
 
 <a href="message.html">
-  <img class="logo-fixed" src="misc/logo/clippy.jpg" alt="Logo" />
+  <img class="logo-fixed-left" src="misc/logo/clippy.jpg" alt="Logo" />
 </a>
+<img class="logo-fixed-right" src="misc/logo/logo.png" alt="Logo" />
 
 
 <footer>
@@ -389,23 +415,21 @@
 </footer>
 
 
-<!-- GUESTBOOK -->
-<a href="https://annoise.atabook.org/" class="corner-image left" style="bottom: 150px;">
-  <img src="misc/icons/guestbookicon.webp" alt="Guestbook Icon" />
-  <span class="corner-label">g&nbsp;u&nbsp;e&nbsp;s&nbsp;t&nbsp;b&nbsp;o&nbsp;o&nbsp;k</span>
-</a>
+<div class="side-panel">
+  <a href="https://annoise.atabook.org/" class="panel-item">
+    <img src="misc/icons/guestbookicon.webp" alt="Guestbook Icon" />
+    <span>guestbook</span>
+  </a>
+  <a href="newsletter.html" class="panel-item">
+    <img src="misc/icons/newslettericon.jpg" alt="Newsletter Icon" />
+    <span>newsletter</span>
+  </a>
+  <a href="sitemap.html" class="panel-item">
+    <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
+    <span>sitemap</span>
+  </a>
+</div>
 
-<!-- NEWSLETTER -->
-<a href="newsletter.html" class="corner-image left" style="bottom: 280px;">
-  <img src="misc/icons/newslettericon.jpg" alt="Newsletter Icon" />
-  <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
-</a>
-
-<!-- SITEMAP -->
-<a href="sitemap.html" class="corner-image left" style="bottom: 20px;">
-  <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
-  <span class="corner-label">s&nbsp;i&nbsp;t&nbsp;e&nbsp;m&nbsp;a&nbsp;p</span>
-</a>
 
   
 <script>
@@ -433,7 +457,6 @@
 
 </body>
 </html>
-
 
 
 
