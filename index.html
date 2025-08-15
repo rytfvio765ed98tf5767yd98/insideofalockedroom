@@ -158,17 +158,17 @@
     }
 
 .side-panel {
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute;
+  bottom: 41px; 
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: row;
+  gap: 14px;
   background: rgba(10, 10, 10, 0.5);
   border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 20px 14px;
+  border-radius: 12px;
+  padding: 12px 16px;
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   z-index: 25;
@@ -183,7 +183,7 @@
 }
 
 .panel-item img {
-  width: 96px;
+  width: 94px;
   height: 80px;
   object-fit: cover;
   border-radius: 10px;
