@@ -20,13 +20,26 @@
       line-height: 1.6;
     }
 
-  
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      padding: 24px 24px;
+      padding: 14px 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -71,21 +84,20 @@
 
 
  
-    main {
-      margin-top: 110px;
-      text-align: center;
-      padding: 20px;
-    }
+main {
+  margin-top: 110px;
+  padding: 20px;
+}
 
-    .video-container {
-      width: 100%;
-      max-width: 500px;
-      aspect-ratio: 16 / 9;
-      border-radius: 14px;
-      overflow: hidden;
-      margin: 100px auto -100px auto;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
+.video-container {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 150px auto 0 auto; 
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
     .video-container video {
       width: 100%;
@@ -94,53 +106,20 @@
       display: block;
     }
 
-    
-    .button-section {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      flex-wrap: wrap;
-      margin-bottom: -100px;
-      margin-top: 370px;
-    }
-
-    .button-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      background: #0d0d0d;
-      padding: 0px 0px;
-      border-radius: 10px;
-      border: 2px solid rgba(255,255,255,0.08);
-      transition: border-color 0.3s;
-    }
-
-    .button-link:hover {
-      border-color: rgba(255,255,255,0.25);
-    }
-
-    .button-link img {
-      width: 100px;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: -5px;
-    }
-
-    .button-label {
-      color: #eee;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-family: monospace;
-    }
 
   
-    footer {
-      text-align: center;
-      padding: 0px 20px;
-      border-top: 122px solid rgba(255, 255, 255, 0);
-      margin-top: 0px;
-    }
+footer {
+  text-align: center;
+  padding: 8px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  color: #555;
+  font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
 
     .logo {
       width: 58px;
@@ -160,12 +139,79 @@
       font-size: 28px;
       margin: 0 20px;
     }
+    
         body {
   background-image: url('bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+    
+    
+.side-panel {
+  
+  position: fixed;
+  bottom: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background: rgba(10, 10, 10, 0.74);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 12px 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 25;
+}
+
+
+
+.panel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.panel-item img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.panel-item span {
+  margin-top: 6px;
+  color: #ddd;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: monospace;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.panel-item:hover {
+  transform: translateY(-4px);
+}
+
+.panel-item:hover img {
+  transform: scale(1.05);
+  border-color: rgba(255,255,255,0.2);
+}
+    .panel-item.with-separator::after {
+  content: '|';
+  color: rgba(102, 102, 102, 0.38);
+  font-size: 55px;
+      margin-top: -10px;
+  margin-left: 18px;
+  margin-right: 18px;
+  align-self: center;
+}
+
   </style>
 </head>
 <body>
@@ -175,16 +221,44 @@
   <div class="header-title">inside of a locked room</div>
   <nav class="header-links">
     <a href="about-mobile.html">about</a>
-    <span class="separator">◌</span>
-    <a href="writings.html">writings</a>
+
     <span class="separator">|</span>
-    <a href="works-mobile.html">works</a>
-    <span class="separator">◌</span>
+
     <a href="contact.html">contact</a>
   </nav>
 </header>
 
 
+<div class="side-panel">
+  <a href="works.html" class="panel-item">
+    <img src="misc/icons/worksicon.png" alt="works icon" />
+    <span>works</span>
+  </a>
+
+  <a href="writings.html" class="panel-item">
+    <img src="misc/icons/writingsicon.png" alt="writings icon" />
+    <span>writings</span>
+  </a>
+
+
+  
+  <a href="sitemap.html" class="panel-item with-separator">
+  </a>
+  
+  <a href="https://annoise.atabook.org/" class="panel-item">
+    <img src="misc/icons/guestbookicon.png" alt="Guestbook Icon" />
+    <span>guestbook</span>
+  </a>
+
+  <a href="newsletter.html" class="panel-item">
+    <img src="misc/icons/newsletter.gif" alt="Newsletter Icon" />
+    <span>newsletter</span>
+  </a>
+  <a href="sitemap.html" class="panel-item">
+    <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
+    <span>sitemap</span>
+  </a>
+</div>
 
   <main>
     <div class="video-container">
@@ -194,21 +268,6 @@
       </video>
     </div>
 
-  
-    <div class="button-section">
-      <a href="newsletter.html" class="button-link">
-        <img src="misc/icons/newsletter.gif" alt="Newsletter Icon">
-        <span class="button-label"><br>newsletter</span>
-      </a>
-      <a href="https://annoise.atabook.org/" class="button-link">
-  <img src="misc/icons/guestbookicon.png" alt="Guestbook Icon" />
- <span class="button-label">guestbook</span>
-</a>
-      <a href="sitemap.html" class="button-link">
-        <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon">
-        <span class="button-label"><br>sitemap</span>
-      </a>
-    </div>
   </main>
 
  
