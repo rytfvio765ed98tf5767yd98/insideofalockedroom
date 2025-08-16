@@ -20,8 +20,6 @@ html, body {
   color: #aaa;
   position: relative;
 }
-
-
 header {
   position: relative; 
   letter-spacing: -1px;
@@ -33,13 +31,40 @@ header {
   align-items: center;
   padding: 20px;
   z-index: 10;
+  background-image: linear-gradient(to left, 
+    #000 0%, 
+    #000 32%, 
+    #242424 82%, 
+    #5a5a5a 100%);
+  color: #000; 
+  overflow: hidden;
 }
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 0px,
+    rgba(255, 255, 255, 0.12) 5px 6px
+  );
+  mix-blend-mode: screen;
+  animation: glitch-move 3s infinite linear;
+  z-index: 15;
+}
+
+
+
+
 
     .header-title {
       font-family: sans-serif;
       font-size: 29px;
       font-weight: bold;
-      color: #ffffff;
+      color: #000000;
+      z-index: 20;
     }
 
     .header-sub-links {
@@ -49,22 +74,23 @@ header {
       font-size: 23px;
       color: #888;
       font-family: sans-serif;
+      z-index: 20;
     }
 
     .header-sub-links a {
-      color: #888;
+      color: rgb(0, 0, 0);
       font-weight: bold;
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
     .header-sub-links a:hover {
-      color: #fff;
+      color: #929292;
       text-decoration: none;
     }
 
     .separator {
-      color: #9b9b9b;
+      color: #000000;
       font-size: 30px;
       line-height: 1;
     
@@ -116,20 +142,7 @@ header {
       height: auto;
     }
 
-    .corner-image {
-      position: fixed;
-      bottom: 12px;
-      left: 20px;
-      z-index: 1000;
-    }
 
-    .corner-image img {
-      width: 112px;
-      height: auto;
-      opacity: 1;
-      border-radius: 21px;
-      cursor: pointer;
-    }
 
     .corner-label {
       position: absolute;
@@ -142,23 +155,68 @@ header {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 1px 4px;
       border-radius: 2px;
-      letter-spacing: 0px;
+      letter-spacing: px;
       pointer-events: none;
     }
+.header-newsletter {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-newsletter img {
+  width: 112px;
+  height: auto;
+  opacity: 1;
+  border-radius: 21px;
+  cursor: pointer;
+}
+
+.header-newsletter .corner-label {
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  font-family: monospace;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1px 2px;
+  border-radius: 2px;
+  letter-spacing: -1px;
+  pointer-events: none;
+}
+
+
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="header-left" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+<header>
+  <div class="header-left" style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+    <div style="display: flex; flex-direction: row; align-items: center; gap: 12px;">
       <div class="header-title">inside of a locked room</div>
-      <nav class="header-sub-links">
-        <a href="index.html">main page</a>
-        <span class="separator">❍</span>
-        <a href="sitemap.html">sitemap</a>
-      </nav>
+      <div class="header-subtitle" style="font-size: 29px; font-weight: bold; color: #888;">| writings</div>
     </div>
-  </header>
+    
+    <nav class="header-sub-links">
+      <a href="index.html">main page</a>
+      <span class="separator">❍</span>
+      <a href="sitemap.html">sitemap</a>
+    </nav>
+  </div>
+
+  <div class="header-newsletter">
+    <a href="newsletter.html" class="corner-link">
+      <img src="misc/icons/newsletter.gif" alt="Newsletter Icon" />
+      <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
+    </a>
+  </div>
+</header>
+
+
+
 
   <div class="center-content">
     <h2>6th august 2025</h2>
@@ -171,11 +229,6 @@ header {
     <img src="misc/logo/logo.png" alt="logo" />
   </div>
 
-  <div class="corner-image">
-    <a href="newsletter.html" class="corner-link">
-      <img src="misc/icons/newsletter.gif" alt="Newsletter Icon" />
-      <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
-    </a>
-  </div>
+
 </body>
 </html>
