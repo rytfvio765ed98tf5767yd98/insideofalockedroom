@@ -18,7 +18,7 @@ html, body {
   background-color: #000;
   font-family: sans-serif;
   color: #aaa;
-  overflow: hidden;
+
 }
 
 header {
@@ -175,7 +175,7 @@ header {
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  padding-left: 20px; 
+  padding-left: 56px; 
  
 }
 
@@ -356,11 +356,16 @@ header {
       <div class="header-subtitle" style="font-size: 29px; font-weight: bold; color: #888;">| writings</div>
     </div>
 
-    <nav class="header-sub-links">
-      <a href="index.html">main page</a>
-      <span class="separator">❍</span>
-      <a href="sitemap.html">sitemap</a>
-    </nav>
+<nav class="header-sub-links">
+  <a href="index.html">main page</a>
+  <span class="separator">❍</span>
+  <a href="sitemap.html">sitemap</a>
+</nav>
+
+<div id="newestEntriesLabel" style="color: #8b8b8b; font-size: 22px; margin-top: 18px; display: none; item">
+  n e w e s t&nbsp;&nbsp;&nbsp; e n t r i e s
+</div>
+
   </div>
 
 
@@ -372,7 +377,10 @@ header {
 </header>
 
 
+
 <div class="main-content">
+
+
   <div class="article-list">
     <div class="article-item" data-category="poem">
       <a href="poem1.html" class="article-link" onclick="loadArticle('writings/poem1.html'); return false;">
@@ -410,6 +418,7 @@ function loadArticle(url) {
 
 function filterArticles(category, linkElement) {
   const articles = document.querySelectorAll('.article-item');
+  const label = document.getElementById('newestEntriesLabel');
 
   articles.forEach(article => {
     const articleCategory = article.getAttribute('data-category');
@@ -420,12 +429,17 @@ function filterArticles(category, linkElement) {
     }
   });
 
-  
   const filterLinks = document.querySelectorAll('.category-filter a');
   filterLinks.forEach(link => link.classList.remove('active-filter'));
   if (linkElement) linkElement.classList.add('active-filter');
-}
 
+  // Pokaż napis tylko dla "all"
+  if (category === 'all') {
+    label.style.display = 'block';
+  } else {
+    label.style.display = 'none';
+  }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector('.article-list');
@@ -440,6 +454,24 @@ document.addEventListener("DOMContentLoaded", () => {
   container.innerHTML = '';
   articles.forEach(article => container.appendChild(article));
 });
+  
+  document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector('.article-list');
+  const articles = Array.from(container.querySelectorAll('.article-item'));
+
+  articles.sort((a, b) => {
+    const dateA = new Date(a.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-'));
+    const dateB = new Date(b.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-'));
+    return dateB - dateA;
+  });
+
+  container.innerHTML = '';
+  articles.forEach(article => container.appendChild(article));
+
+  // Pokaż napis "newest entries" na starcie
+  document.getElementById('newestEntriesLabel').style.display = 'block';
+});
+
 </script>
 
 </body>
