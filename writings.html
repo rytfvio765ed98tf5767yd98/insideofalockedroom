@@ -155,8 +155,8 @@ header {
 
 .main-content {
   display: flex;
+  flex-direction: row;
   height: calc(100vh - 120px); 
- 
   position: relative;
 }
 
@@ -169,13 +169,14 @@ header {
 }
 
 .article-preview {
-  width: 50%;
+  width: 65%;
   background-color: #111;
   border-left: 2px solid #333;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
   padding-left: 20px; 
+ 
 }
 
 
@@ -267,7 +268,7 @@ header {
   margin: 0;
   padding: 0;
   background-color: #111;
-  overflow: hidden;
+  
 }
 .article-preview {
   background-color: #000000 !important; 
@@ -323,6 +324,22 @@ header {
 .article-link h3:hover {
   color: #ffffff; 
 }
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .article-preview {
+    width: 100%;
+    height: 50vh; /* lub dowolna proporcja */
+  }
+
+  .article-list {
+    width: 100%;
+    height: auto;
+  }
+}
 
   </style>
 </head>
@@ -341,12 +358,7 @@ header {
       <a href="sitemap.html">sitemap</a>    </nav>
   </div>
 
-  <div class="header-newsletter">
-    <a href="newsletter.html" class="corner-link">
-      <img src="misc/icons/newsletter.gif" alt="Newsletter Icon" />
-      <span class="corner-label">n&nbsp;e&nbsp;w&nbsp;s&nbsp;l&nbsp;e&nbsp;t&nbsp;t&nbsp;e&nbsp;r</span>
-    </a>
-  </div>
+
 </header>
 
 
