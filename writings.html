@@ -256,7 +256,7 @@ header {
   height: 100%;
   overflow: hidden;
   background-color: #111;
-  border-left: 2px solid #333;
+  border-left: 0px solid #333;
 }
 
 .article-preview iframe {
@@ -289,6 +289,33 @@ header {
   padding: 0 !important;
   overflow: hidden !important;
 }
+.article-item {
+  margin-bottom: 40px;
+  border-left: 3px solid #333;
+  transition: background-color 0.3s ease;
+}
+
+.article-link {
+  display: block;
+  padding-left: 16px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-item:hover .article-link {
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.24);
+  cursor: pointer;
+}
+
+.article-link h3,
+.article-link .article-meta,
+.article-link .article-category,
+.article-link .article-description {
+  color: inherit;
+}
 
   </style>
 </head>
@@ -319,12 +346,15 @@ header {
 <div class="main-content">
   <div class="article-list">
     
-    <div class="article-item">
-      <h3><a href="entry1.html" onclick="loadArticle('writings/entry1.html'); return false;">my room</a></h3>
-      <div class="article-meta">17th august 2025</div>
-      <div class="article-category">journal entry</div>
-      <div class="article-description">this is (not) a test</div>
-    </div>
+  <div class="article-item">
+  <a href="entry1.html" class="article-link" onclick="loadArticle('writings/entry1.html'); return false;">
+    <h3>my room</h3>
+    <div class="article-meta">17th august 2025</div>
+    <div class="article-category">journal entry</div>
+    <div class="article-description">this is (not) a test</div>
+  </a>
+</div>
+
 
   </div>
 
