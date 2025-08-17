@@ -332,7 +332,7 @@ header {
 
   .article-preview {
     width: 100%;
-    height: 50vh; /* lub dowolna proporcja */
+    height: 50vh; 
   }
 
   .article-list {
@@ -340,48 +340,57 @@ header {
     height: auto;
   }
 }
-
+.category-filter a.active-filter {
+  color: #fff !important;
+  text-decoration: none;
+}
   </style>
 </head>
 
 <body>
-<header>
+<header style="display: flex; justify-content: space-between; align-items: flex-start; padding: 20px;">
+
   <div class="header-left" style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
     <div style="display: flex; flex-direction: row; align-items: center; gap: 12px;">
       <div class="header-title">inside of a locked room</div>
       <div class="header-subtitle" style="font-size: 29px; font-weight: bold; color: #888;">| writings</div>
     </div>
-    
+
     <nav class="header-sub-links">
       <a href="index.html">main page</a>
       <span class="separator">❍</span>
-      <a href="sitemap.html">sitemap</a>    </nav>
+      <a href="sitemap.html">sitemap</a>
+    </nav>
   </div>
 
 
+  <nav class="header-sub-links category-filter" style="display: flex; align-items: center; gap: 20px;">
+    <a href="#" onclick="filterArticles('all', this); return false;" class="active-filter">all</a>
+    <a href="#" onclick="filterArticles('poem', this); return false;">poems</a>
+    <a href="#" onclick="filterArticles('journal entry', this); return false;">journal entries</a>
+  </nav>
 </header>
 
 
 <div class="main-content">
   <div class="article-list">
-  <div class="article-item">
-  <a href="poem1.html" class="article-link" onclick="loadArticle('writings/poem1.html'); return false;">
-    <h3>locked room</h3>
-    <div class="article-meta">17.08.2025</div>
-    <div class="article-category">poem</div>
-    <div class="article-description">i'll be there</div>
-  </a>
-</div>
+    <div class="article-item" data-category="poem">
+      <a href="poem1.html" class="article-link" onclick="loadArticle('writings/poem1.html'); return false;">
+        <h3>locked room</h3>
+        <div class="article-meta">17.08.2025</div>
+        <div class="article-category">poem</div>
+        <div class="article-description">i'll be there</div>
+      </a>
+    </div>
 
-    
-  <div class="article-item">
-  <a href="entry1.html" class="article-link" onclick="loadArticle('writings/entry1.html'); return false;">
-    <h3>little creatures</h3>
-    <div class="article-meta">17.08.2025</div>
-    <div class="article-category">journal entry</div>
-    <div class="article-description">this is (not) a test</div>
-  </a>
-</div>
+    <div class="article-item" data-category="journal entry">
+      <a href="entry1.html" class="article-link" onclick="loadArticle('writings/entry1.html'); return false;">
+        <h3>little creatures</h3>
+        <div class="article-meta">17.08.2025</div>
+        <div class="article-category">journal entry</div>
+        <div class="article-description">this is (not) a test</div>
+      </a>
+    </div>
 
 
   </div>
@@ -391,20 +400,47 @@ header {
   </div>
 </div>
 
-
-
-
-
 <script>
-  function loadArticle(url) {
-    const frame = document.getElementById("previewFrame");
-    if (frame) {
-      frame.src = url;
-    }
+function loadArticle(url) {
+  const frame = document.getElementById("previewFrame");
+  if (frame) {
+    frame.src = url;
   }
+}
+
+function filterArticles(category, linkElement) {
+  const articles = document.querySelectorAll('.article-item');
+
+  articles.forEach(article => {
+    const articleCategory = article.getAttribute('data-category');
+    if (category === 'all' || articleCategory === category) {
+      article.style.display = 'block';
+    } else {
+      article.style.display = 'none';
+    }
+  });
+
+  
+  const filterLinks = document.querySelectorAll('.category-filter a');
+  filterLinks.forEach(link => link.classList.remove('active-filter'));
+  if (linkElement) linkElement.classList.add('active-filter');
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector('.article-list');
+  const articles = Array.from(container.querySelectorAll('.article-item'));
+
+  articles.sort((a, b) => {
+    const dateA = new Date(a.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-'));
+    const dateB = new Date(b.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-'));
+    return dateB - dateA;
+  });
+
+  container.innerHTML = '';
+  articles.forEach(article => container.appendChild(article));
+});
 </script>
+
 </body>
 </html>
-
-
-
