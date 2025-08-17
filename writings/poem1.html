@@ -8,11 +8,10 @@
       margin: 0;
       padding: 0;
       height: 100%;
-   
-      color: #aaa;
+      color: #bebebe;
       font-family: monospace;
       position: relative;
-  
+      overflow: hidden;
     }
 
     body::before {
@@ -22,17 +21,27 @@
       left: 0;
       width: 100%;
       height: 100%;
-       background-image: url('sm3.webp');
+      background-image: url('sm3.webp');
       background-size: cover;
       background-position: center;
       filter: blur(3px) brightness(0.3);
-      z-index: 1;
+      z-index: 0;
+      animation: flicker 5s infinite;
+    }
+
+    @keyframes flicker {
+      0%   { filter: blur(3px) brightness(0.3); }
+      5%   { filter: blur(3px) brightness(0.32); }
+      10%  { filter: blur(3px) brightness(0.28); }
+      15%  { filter: blur(2px) brightness(0.3); }
+      20%  { filter: blur(3px) brightness(0.31); }
+      100% { filter: blur(3px) brightness(0.3); }
     }
 
     .text {
       position: fixed;
       top: 20px;
-      left: 20px; 
+      left: 20px;
       max-width: 90vw;
       line-height: 1.5;
       z-index: 1;
