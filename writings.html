@@ -328,7 +328,7 @@ header {
 }
 
 .category-filter a.active-filter {
-  color: #fff !important;
+  color: #920000 !important;
   text-decoration: none;
 }
     
@@ -379,7 +379,7 @@ header {
   <a href="sitemap.html">sitemap</a>
 </nav>
 
-<div id="newestEntriesLabel" style="color: #8b8b8b; font-size: 22px; margin-top: 18px; display: none; item">
+<div id="newestEntriesLabel" style="color: #555555; font-size: 22px; margin-top: 18px; display: none; text-decoration: overline;">
   l a t e s t&nbsp;&nbsp;&nbsp; p u b l i c a t i o n s
 </div>
 
@@ -389,7 +389,7 @@ header {
   <nav class="header-sub-links category-filter" style="display: flex; align-items: center; gap: 20px;">
     <a href="#" onclick="filterArticles('all', this); return false;" class="active-filter">all</a>
     <a href="#" onclick="filterArticles('poem', this); return false;">poems</a>
-    <a href="#" onclick="filterArticles('journal entry', this); return false;">journal entries</a>
+    <a href="#" onclick="filterArticles('journal entry', this); return false;">journal</a>
   </nav>
 </header>
 
@@ -439,11 +439,17 @@ function filterArticles(category, linkElement) {
 
   articles.forEach(article => {
     const articleCategory = article.getAttribute('data-category');
-    if (category === 'all' || articleCategory === category) {
-      article.style.display = 'block';
-    } else {
-      article.style.display = 'none';
-    }
+if (category === 'all') {
+  label.textContent = 'a l l';
+  label.style.display = 'block';
+} else if (category === 'poem') {
+  label.textContent = 'p o e m s';
+  label.style.display = 'block';
+} else if (category === 'journal entry') {
+  label.textContent = 'j o u r n a l';
+  label.style.display = 'block';
+}
+
   });
 
   const filterLinks = document.querySelectorAll('.category-filter a');
@@ -451,12 +457,9 @@ function filterArticles(category, linkElement) {
   if (linkElement) linkElement.classList.add('active-filter');
 
   
-  if (category === 'all') {
-    label.style.display = 'block';
-  } else {
-    label.style.display = 'none';
-  }
+  label.style.display = 'block';
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector('.article-list');
@@ -470,21 +473,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   container.innerHTML = '';
   articles.forEach(article => container.appendChild(article));
-});
-  
-  document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector('.article-list');
-  const articles = Array.from(container.querySelectorAll('.article-item'));
-
-  articles.sort((a, b) => {
-    const dateA = new Date(a.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-'));
-    const dateB = new Date(b.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-'));
-    return dateB - dateA;
-  });
-
-  container.innerHTML = '';
-  articles.forEach(article => container.appendChild(article));
-
 
   document.getElementById('newestEntriesLabel').style.display = 'block';
 });
