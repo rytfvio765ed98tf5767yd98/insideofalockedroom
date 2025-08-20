@@ -395,8 +395,8 @@ header {
   <a href="sitemap.html">sitemap</a>
 </nav>
 
-<div id="newestEntriesLabel" style="color: #868686; font-size: 22px; margin-top: 18px; display: none; text-decoration: overline;">
-  l a t e s t&nbsp;&nbsp;&nbsp; p u b l i c a t i o n s
+<div id="newestEntriesLabel" style="font-family: monospace; color: #d0d0d0; font-size: 22px; margin-top: 22px; display: none;">
+  latest&nbsp; publications
 </div>
 
   </div>
@@ -473,11 +473,11 @@ function filterArticles(category, linkElement) {
   });
 
   if (category === 'all') {
-    label.textContent = 'a l l';
+    label.textContent = 'all';
   } else if (category === 'poem') {
-    label.textContent = 'p o e m s';
+    label.textContent = 'poems';
   } else if (category === 'journal entry') {
-    label.textContent = 'j o u r n a l';
+    label.textContent = 'journal';
   }
   label.style.display = 'block';
 
