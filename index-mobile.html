@@ -80,9 +80,17 @@ header {
 }
 
 main {
-  margin-top: 90px;
-  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
+
 
 .video-container {
   width: 100%;
@@ -90,7 +98,6 @@ main {
   aspect-ratio: 16 / 9;
   border-radius: 12px;
   overflow: hidden;
-  margin: 230px auto 0 auto;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
