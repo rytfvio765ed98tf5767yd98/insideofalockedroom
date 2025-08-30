@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+      color: #aaa;
+      font-family: monospace;
+      overflow: hidden; 
+    }
+
+    .text {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      max-width: 90vw;
+      max-height: calc(100vh - 40px); 
+      line-height: 1.5;
+      overflow-y: auto;
+      padding-right: 10px; 
+    }
+
+    
+    .text::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .text::-webkit-scrollbar-track {
+      background: #000;
+    }
+
+    .text::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 4px;
+      border: 2px solid #000;
+    }
+
+    .text::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    
+    .text {
+      scrollbar-width: thin;
+      scrollbar-color: #333 #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="text">
+    my room is getting less and less spacious with each day due to a tremendous amount of ideas crawling out of my head.
+    i can barely sleep in my own bed as it's so crowded in here at night! i can't find them anywhere at daytime though,
+    but somehow they manage to chase me whenever i step out of the house.
+    <br><br>
+    to ease the paranoid state i'm in, i stuck one of my eyes to the door, so fingers crossed i'd catch a glimpse
+    <br>of these little creatures.
+  </div>
+</body>
+</html>
