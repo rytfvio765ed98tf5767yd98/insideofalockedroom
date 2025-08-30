@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>directory | maja braumberger</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <meta name="description" content="directory by maja braumberger" />
+  <style>
+  
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #aaa;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    header {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .header-links {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .header-links a {
+      text-decoration: none;
+      color: #888;
+      transition: color 0.2s ease;
+    }
+
+    .header-links a:hover {
+      color: #fff;
+    }
+
+    .separator {
+      color: #9b9b9b;
+      font-size: 20px;
+      margin: 0 72px;
+      user-select: none;
+      font-weight: bold;
+    }
+
+   
+    .image-container {
+      margin-top: 30px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .image-container img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 22px;
+      transition: transform 0.3s ease;
+    }
+
+
+    .image-caption {
+      font-style: italic;
+    font-family: times new roman;
+      font-size: 16px;
+      color: #aaa;
+      margin-top: 10px;
+      text-align: center;
+
+      line-height: 1.5;
+    }
+
+    .categories {
+      width: 100%;
+      max-width: 1200px;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .category {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .category-title {
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 16px;
+      font-weight: bold;
+      border-bottom: 2px solid #444;
+      padding-bottom: 6px;
+    }
+
+    .directory {
+      list-style-type: none;
+      padding: 0;
+      width: 100%;
+    }
+
+    .directory li {
+      margin-bottom: 12px;
+    }
+
+    .directory a {
+      text-decoration: none;
+      color: #aaa;
+      font-size: 18px;
+      display: block;
+      padding: 8px 0;
+      transition: color 0.3s ease;
+    }
+
+    .directory a:hover {
+      color: #fff;
+    }
+
+
+    footer {
+      font-size: 12px;
+      color: #444;
+      font-family: monospace;
+      margin-top: 60px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    
+    @media (max-width: 768px) {
+      .header-title {
+        font-size: 28px;
+      }
+
+      .header-links a {
+        font-size: 16px;
+      }
+
+      .directory a {
+        font-size: 16px;
+      }
+
+      .image-container img {
+
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">at the door of a locked room</div>
+    <nav class="header-links">
+      <a href="index.html">main page</a>
+      <span class="separator">❍</span>
+      <a href="sitemap.html">sitemap</a>
+    </nav>
+  </header>
+
+  
+  <div class="image-container">
+    <img src="projects/photography/unsorted/directory.webp" alt="Sample Image">
+    
+    <div class="image-caption">off we go into the wild pale yonder</div>
+  </div>
+
+  
+  <div class="categories">
+    <div class="category">
+      <div class="category-title">explore the true web</div>
+      <ul class="directory">
+        <li><a href="https://www.wiby.me" target="_blank">✦&nbsp;&nbsp;&nbsp; Wiby - Search Engine for the Classic Web</a></li>
+        <li><a href="https://marginalia-search.com/" target="_blank">✦&nbsp;&nbsp;&nbsp; Marginalia Search</a></li>
+        <li><a href="https://wildwild.directory/" target="_blank">✦&nbsp;&nbsp;&nbsp; The Wild Wild Web</a></li>
+        <li><a href="https://smallweb.cc" target="_blank">✦&nbsp;&nbsp;&nbsp; smallweb</a></li>
+        <li><a href="https://a-website-is-a-room.net/" target="_blank">✦&nbsp;&nbsp;&nbsp; A Website Is A Room</a></li>
+        <li><a href="https://startpage.com" target="_blank">✦&nbsp;&nbsp;&nbsp; Startpage - Private Search Engine</a></li>
+      </ul>
+    </div>
+
+   <div class="category">
+      <div class="category-title">open-source software</div>
+      <ul class="directory">
+          <li><a href="https://www.cryptpad.org" target="_blank">⚙&nbsp;&nbsp;&nbsp; Cryptpad</a></li>
+        <li><a href="https://www.postimages.org" target="_blank">⚙&nbsp;&nbsp;&nbsp; Postimages</a></li>
+        <li><a href="https://www.ezgif.com" target="_blank">⚙&nbsp;&nbsp;&nbsp; Ezgif</a></li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <div class="category-title">various web tools</div>
+      <ul class="directory">
+          <li><a href="https://www.darktable.org" target="_blank">⚙&nbsp;&nbsp;&nbsp; darktable</a></li>
+        <li><a href="https://www.phcode.dev" target="_blank">⚙&nbsp;&nbsp;&nbsp; Phoenix Code</a></li>
+      </ul>
+    </div>
+          <div class="category">
+      <div class="category-title">webrings</div>
+      <ul class="directory">
+        <li><a href="https://baccyflap.com/noai/" target="_blank">⊙&nbsp;&nbsp;&nbsp; NO AI Webring</a></li>
+        <li><a href="https://neocreatives.byethost5.com/?i=1" target="_blank">⊙&nbsp;&nbsp;&nbsp; Neocreatives Webring</a></li>
+        <li><a href="https://lunar-webring.neocities.org/" target="_blank">⊙&nbsp;&nbsp;&nbsp; lunar webring</a></li>
+      
+      </ul>
+    </div>
+          <div class="category">
+      <div class="category-title">guides on how to make unusable websites</div>
+      <ul class="directory">
+        <li><a href="https://www.awwwards.com" target="_blank">-&nbsp;&nbsp;&nbsp;Awwwards [WARNING: nukes computers with <69GB RAM]</a></li>
+       </ul>
+    </div>
+  </div>
+
+  <!-- Stopka -->
+  <footer>© 2025 maja braumberger. all rights reserved.</footer>
+
+</body>
+</html>
