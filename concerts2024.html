@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+  <meta name="description" content="a lone art gallery">
+  <meta name="keywords" content="little man figurine, huśtawki band, kresy band, calamaze, seks w czasach wojny, marie laveau, dark art, dark photography, monochrome art, black and white photography, fine art photography, conceptual art, existential themes, surreal imagery, psychological art, poetic visuals, visual storytelling, emotional photography, moody art, minimalistic art, atmospheric photography, introspective art, art of solitude, abstract photography, contemporary fine art, artistic expression, dark surrealism">
+   <meta name="author" content="Maja Braumberger">
+  <meta http-equiv="refresh" content="180">
+  <title>concerts - 2024 | mb</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+      font-family: sans-serif;
+      color: #aaa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .header-links {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .header-links a {
+      text-decoration: none;
+      color: #888;
+      transition: color 0.2s ease;
+    }
+
+    .header-links a:hover {
+      color: #fff;
+    }
+
+    .separator {
+      color: #9b9b9b;
+      font-size: 20px;
+      margin: 0 72px;
+      user-select: none;
+      font-weight: bold;
+    }
+
+    footer {
+      font-size: 12px;
+      color: rgb(93, 93, 93);
+      margin-bottom: 12px;
+    }
+
+    .logo-column {
+      position: fixed;
+      bottom: 12px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+      color: #aaa;
+      font-size: 15px;
+      font-family: monospace;
+      max-width: 200px;
+    }
+
+    .logo-column .text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      white-space: nowrap;
+      padding-left: 4px;
+      user-select: text;
+    }
+
+    .logo-column .images {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .logo-column .images img {
+      width: 69px;
+      height: auto;
+      border-radius: 6px;
+    }
+    .content {
+  flex: 1;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: auto;
+  max-width: 60vw;  
+  margin: 40px auto; 
+}
+
+
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+    }
+    
+.lightbox {
+    display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.lightbox.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 0 12px #000;
+  border-radius: 6px;
+  cursor: default;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 48px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+  transform: translateY(-50%);
+  padding: 0 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.arrow.left {
+  left: 20px;
+}
+
+.arrow.right {
+  right: 20px;
+}
+
+.gallery img:hover {
+  filter: invert(1);
+  cursor:crosshair;
+  transition: filter 0.2s ease;
+}
+@media (max-width: 768px) {
+  .gallery {
+    max-width: 90vw;    
+    margin: 30px auto; 
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery img {
+    width: 100%;  
+  }
+}
+.gallery-info {
+  text-align: left;
+  margin: 40px auto 60px auto;
+  max-width: 600px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.gallery-info h1 {
+  font-size: 4rem;
+  margin: 0;
+  font-weight: bold;
+  color: white;
+}
+
+.gallery-info h2 {
+  font-size: 1.5rem;
+  margin: 8px 0 20px 0;
+  color: #666666; 
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.gallery-info p {
+    
+  font-size: 1.1rem;
+  margin: 8px 0 20px 0;
+  color: white;
+  line-height: 1.4;
+}
+
+.gallery-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  color: white;
+  max-width: 300px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.gallery-info strong {
+  display: flex;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-title">outside of a locked room</div>
+    <nav class="header-links">
+      <a href="index.html">main page</a>
+      <span class="separator">❍</span>
+      <a href="sitemap.html">sitemap</a>
+    </nav>
+  </header>
+
+  <div class="gallery">
+        <img src="projects/photography/concerts/2024/1.webp" alt="1" />
+        <img src="projects/photography/concerts/2024/2.webp" alt="2" />
+        <img src="projects/photography/concerts/2024/3.webp" alt="3" />
+        <img src="projects/photography/concerts/2024/4.webp" alt="4" />
+        <img src="projects/photography/concerts/2024/5.webp" alt="5" />
+        <img src="projects/photography/concerts/2024/6.webp" alt="6" />
+        <img src="projects/photography/concerts/2024/7.webp" alt="7" />
+        <img src="projects/photography/concerts/2024/8.webp" alt="8" />
+        <img src="projects/photography/concerts/2024/9.webp" alt="9" />
+</div>
+<section class="gallery-info">
+  <h1>2024</h1>
+  <h2>august - november</h2>
+  <p>the best bits of 2024's wild nights,<br> straight from the filthiest Cracovian basements.</p><br>
+  <p><strong>featured bands:</strong></p>
+  <ul>
+    <li>little man, figurine</li>
+    <li>huśtawki</li>
+    <li>kresy</li>
+    <li>calamaze</li>
+    <li>seks w czasach wojny</li>
+    <li>marie laveau</li>
+  </ul>
+    
+</section>
+
+
+  <footer>© 2025 maja braumberger. all rights reserved.</footer>
+
+  <div class="logo-column">
+    <div class="images">
+      <a href="index.html" style="text-align:center; display: block; color:#aaa; font-size:0px; font-family: monospace; text-decoration: none; margin-top: 8px;">
+        <img src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
+      </a>
+    </div>
+  </div>
+  
+<div id="lightbox" class="lightbox">
+  <span class="close-btn">✕</span>
+  <img src="" alt="">
+  <span class="arrow left">‹</span>
+  <span class="arrow right">›</span>
+</div>
+
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('.close-btn');
+const leftArrow = lightbox.querySelector('.arrow.left');
+const rightArrow = lightbox.querySelector('.arrow.right');
+
+const images = Array.from(document.querySelectorAll('.gallery img'));
+let currentIndex = 0;
+
+function showImage(index) {
+  if (index < 0) index = images.length - 1;
+  if (index >= images.length) index = 0;
+  currentIndex = index;
+  lightboxImg.src = images[currentIndex].src;
+  lightbox.classList.add('visible'); 
+}
+
+function hideLightbox() {
+  lightbox.classList.remove('visible');  
+  setTimeout(() => {
+    lightboxImg.src = '';  
+  }, 400);
+}
+
+images.forEach((img, index) => {
+  img.addEventListener('click', () => showImage(index));
+});
+
+closeBtn.addEventListener('click', hideLightbox);
+
+leftArrow.addEventListener('click', (e) => {
+  e.stopPropagation();
+  showImage(currentIndex - 1);
+});
+
+rightArrow.addEventListener('click', (e) => {
+  e.stopPropagation();
+  showImage(currentIndex + 1);
+});
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) hideLightbox();
+});
+
+window.addEventListener('keydown', (e) => {
+  if (lightbox.classList.contains('visible')) {
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    if (e.key === 'Escape') hideLightbox();
+  }
+});
+
+</script>
+
+
+</body>
+</html>

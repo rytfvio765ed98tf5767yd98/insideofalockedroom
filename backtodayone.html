@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=1024, user-scalable=no">
+      <meta name="description" content="a lone art gallery">
+    <meta name="keywords" content="dark art, dark photography, monochrome art, black and white photography, fine art photography, conceptual art, existential themes, surreal imagery, psychological art, poetic visuals, visual storytelling, emotional photography, moody art, minimalistic art, atmospheric photography, introspective art, art of solitude, abstract photography, contemporary fine art, artistic expression, dark surrealism">
+    <meta name="author" content="Maja Braumberger">
+    <meta http-equiv="refresh" content="180">
+  <title>back to day one | mb</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+      font-family: sans-serif;
+      color: #aaa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .header-links {
+      display: flex;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .header-links a {
+      text-decoration: none;
+      color: #888;
+      transition: color 0.2s ease;
+    }
+
+    .header-links a:hover {
+      color: #fff;
+    }
+
+    .separator {
+      color: #9b9b9b;
+      font-size: 20px;
+      margin: 0 72px;
+      user-select: none;
+      font-weight: bold;
+    }
+
+    .frame {
+      flex: 1;
+      display: flex;
+      width: 69vw;
+      max-width: 69vw;
+      aspect-ratio: 4 / 3;
+      box-sizing: border-box;
+      margin: 12px 0;
+      overflow: hidden;
+      border: 0px solid #fff;
+    }
+
+    .left-half {
+      width: 25%;
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      user-select: none;
+      position: relative;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 32px;
+      font-weight: bold;
+      color: #000;
+      text-align: left;
+      user-select: none;
+    }
+
+    .project-date {
+      margin: 4px 0 16px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: #444;
+      user-select: none;
+    }
+
+    .project-text {
+      font-size: 16.2px;
+      line-height: 1.3;
+      color: #000000;
+      text-align: justify;
+      user-select: text;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .right-half {
+      width: 75%;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr auto; 
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .popup {
+      background: #000000;
+      border-radius: 12px;
+      aspect-ratio: 1;
+      width: 100%;
+      max-width: 90vmin;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .popup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .right-half ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      width: 100%;
+      max-width: 180px;
+      max-height: 100%;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      opacity: 0.3;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    .right-half ul:hover {
+      opacity: 1;
+    }
+
+    .right-half li {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #000;
+      border-radius: 12px;
+      flex-shrink: 0;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .right-half li img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .right-half ul::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .right-half ul::-webkit-scrollbar-thumb {
+      background: hsl(0, 0%, 20%);
+      border-radius: 4px;
+    }
+
+    .right-half ul.dimmed {
+      opacity: 0.3;
+    }
+
+    .popup img.bright {
+      opacity: 1;
+    }
+
+    @keyframes flashEffect {
+      0% { opacity: 1; filter: brightness(1); }
+      15% { opacity: 0.6; filter: brightness(2.5); }
+      30% { opacity: 0.9; filter: brightness(1.5); }
+      50% { opacity: 1; filter: brightness(1); }
+    }
+
+    .popup img.flash {
+      animation: flashEffect 0.3s ease-in-out;
+    }
+
+    footer {
+      font-size: 12px;
+      color: rgb(93, 93, 93);
+      margin-bottom: 12px;
+    }
+
+    .logo-png {
+      position: fixed;
+      bottom: 12px;
+      right: 20px;
+    }
+
+    .logo-png img {
+      width: 69px;
+      height: auto;
+    }
+
+  
+    .logo-column {
+      position: fixed;
+      bottom: 12px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+      color: #aaa;
+      font-size: 15px;
+      font-family: monospace;
+      max-width: 200px;
+    }
+
+    .logo-column .text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      white-space: nowrap;
+      padding-left: 4px;
+      user-select: text;
+    }
+
+    .logo-column .images {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .logo-column .images img {
+      width: 69px;
+      height: auto;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-title">inside of a locked room</div>
+    <nav class="header-links">
+      <a href="index.html">main page</a>
+      <span class="separator">❍</span>
+      <a href="sitemap.html">sitemap</a>
+    </nav>
+  </header>
+
+  <div class="frame">
+    <div class="left-half">
+      <h1 class="project-title">back to day one</h1>
+      <div class="project-date">27 june 2024</div>
+      <p class="project-text">Alienation, identity crisis, fear of all the inevitable processes occurring in nature - these are the results of a distorted perception of reality. The digital era has become a bridge for highlighting extremities and an alternate realm conducive to fixations on one's persona. 
+ </p>
+        <p class="project-text">"Back to Day One" is a proposition to stop for a moment and try to reconstruct our personal definitions of the reality we're surrounded by - the reality from which the majority of people have cut ties. We live in artificially created worlds, almost not acknowledging the existence of the one that dictates whether we are able to exist or not. We actively attribute the highest priority to anguish, whose presence is dependent only on one's mind. Currently, it seems like society is in constant search of things that make a person stand out, completely overlooking the beauty that lies in oneness with the rest of the world (or it remains intentionally ignored). </p>
+      <footer style="font-size: 12px; color: #555; margin-top: 12px; user-select: text;">
+        This project was made possible thanks to the immeasureable support of <a href="https://www.facebook.com/imageworkspoland/" target="_blank" style="color: #555; text-decoration: underline;">ImageWorks Anita Andrzejewska & Andrzej Pilichowski-Ragno</a>.
+      </footer>
+    </div>
+
+    <div class="right-half">
+      <div class="popup">
+        <img id="mainImage" src="projects/photography/backtodayone/btdo-idle.webp" alt="default" />
+      </div>
+      <ul>
+        <li><img src="projects/photography/backtodayone/1.webp" alt="1" /></li>
+        <li><img src="projects/photography/backtodayone/2.webp" alt="2" /></li>
+        <li><img src="projects/photography/backtodayone/3.webp" alt="3" /></li>
+        <li><img src="projects/photography/backtodayone/4.webp" alt="4" /></li>
+        <li><img src="projects/photography/backtodayone/5.webp" alt="5" /></li>
+        <li><img src="projects/photography/backtodayone/6.webp" alt="6" /></li>
+        <li><img src="projects/photography/backtodayone/7.webp" alt="7" /></li>
+        <li><img src="projects/photography/backtodayone/8.webp" alt="8" /></li>
+        <li><img src="projects/photography/backtodayone/9.webp" alt="9" /></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <footer>© 2025 maja braumberger. all rights reserved.</footer>
+
+  <div class="logo-column">
+    <div class="text">curated by&nbsp;&nbsp;&nbsp;&nbsp;created by</div>
+    <div class="images">
+      <a href="https://www.facebook.com/imageworkspoland" target="_blank" style="text-align:center; display: block; color:#aaa; font-size:0px; font-family: monospace; text-decoration: none; margin-bottom: 8px;">
+        <img src="misc/logo/imageworkspoland.png" alt="imageworkspoland" />
+      </a>
+      <a href="index.html" style="text-align:center; display: block; color:#aaa; font-size:0px; font-family: monospace; text-decoration: none; margin-top: 8px;">
+       <img src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
+      </a>
+    </div>
+  </div>
+
+
+
+  <script>
+    
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.right-half ul li img');
+    const ul = document.querySelector('.right-half ul');
+
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+        mainImage.classList.add('flash');
+        setTimeout(() => mainImage.classList.remove('flash'), 300);
+        mainImage.classList.add('bright');
+        ul.classList.add('dimmed');
+
+        if (scrollInterval) {
+          clearInterval(scrollInterval);
+          scrollInterval = null;
+        }
+      });
+    });
+
+    ul.addEventListener('mouseover', () => ul.classList.remove('dimmed'));
+    ul.addEventListener('mouseout', () => ul.classList.add('dimmed'));
+
+    let scrollInterval = null;
+
+    window.addEventListener('load', () => {
+      const maxScrollTop = ul.scrollHeight - ul.clientHeight;
+      if (maxScrollTop > 0) {
+        let direction = 1;
+        scrollInterval = setInterval(() => {
+          if (direction === 1) {
+            ul.scrollTo({ top: maxScrollTop, behavior: 'smooth' });
+          } else {
+            ul.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          direction *= -1;
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+

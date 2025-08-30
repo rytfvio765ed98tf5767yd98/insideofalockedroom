@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>writings | maja braumberger</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <meta name="description" content="writings by maja braumberger" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #000;
+      color: #aaa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+header {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.header-links {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.header-links a {
+  text-decoration: none;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.header-links a:hover {
+  color: #fff;
+}
+
+.separator {
+  color: #9b9b9b;
+  font-size: 20px;
+  margin: 0 72px;
+  user-select: none;
+  font-weight: bold;
+}
+
+
+    .frame {
+      display: flex;
+      width: 80%;
+      max-width: 1200px;
+      height: 80vh;
+      margin: 24px 0;
+      border: 1px solid #222;
+      box-shadow: 0 0 4px #111;
+    }
+
+    .left-half {
+      width: 45%;
+      background-color: #111;
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border-right: 1px solid #222;
+    }
+
+    .filter-links {
+      display: flex;
+      gap: 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+.filter-links a {
+  color: #888;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.filter-links a:hover {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.filter-links a.active-filter {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+    .article-item {
+      margin-bottom: 28px;
+      border-left: 2px solid #333;
+      padding-left: 16px;
+    }
+
+    .article-item h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .article-item h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .article-meta {
+      font-size: 14px;
+      color: #666;
+      margin: 4px 0;
+    }
+
+    .article-category {
+      font-style: italic;
+      font-size: 13px;
+      color: #999;
+    }
+
+    .article-description {
+      margin-top: 4px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .right-half {
+      width: 85%;
+      background-color: #000;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #000;
+    }
+
+    footer {
+      font-size: 12px;
+      color: #444;
+      margin-bottom: 12px;
+      font-family: monospace;
+      margin-top: 32px;
+    }
+    .article-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.article-item {
+  padding: 16px;
+  background-color: #111;
+  border-left: 2px solid #333;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-link:hover .article-item {
+  background-color: #1c1c1c;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+.left-half::-webkit-scrollbar {
+  width: 10px;
+}
+
+.left-half::-webkit-scrollbar-track {
+  background: #111; 
+}
+
+.left-half::-webkit-scrollbar-thumb {
+  background-color: #333; 
+  border-radius: 5px;
+  border: 2px solid #111; 
+}
+
+.left-half::-webkit-scrollbar-thumb:hover {
+  background-color: #555; 
+}
+
+
+.left-half {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #111;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">inside of a locked room</div>
+  <nav class="header-links">
+    <a href="index.html">main page</a>
+    <span class="separator">❍</span>
+    <a href="sitemap.html">sitemap</a>
+  </nav>
+</header>
+
+
+<div class="frame">
+  <div class="left-half">
+<div class="filter-links">
+  <a href="#" class="active-filter" onclick="filterArticles('all', this); return false;">all</a>
+  <a href="#" onclick="filterArticles('prose', this); return false;">prose</a>
+  <a href="#" onclick="filterArticles('poem', this); return false;">poems</a>
+  <a href="#" onclick="filterArticles('journal entry', this); return false;">journal</a>
+</div>
+
+
+    <div id="articles">
+<div class="article-list">
+    <a href="prose1.html" class="article-link" onclick="loadArticle('writings/prose1.html'); return false;">
+    <div class="article-item" data-category="prose">
+      <h3>First</h3>
+      <div class="article-meta">29.08.2025</div>
+      <div class="article-category">prose</div>
+      <div class="article-description">The first day of this particular month, for most of history up until now, stands out from...</div>
+    </div>
+  </a>
+  <a href="journal2.html" class="article-link" onclick="loadArticle('writings/journal2.html'); return false;">
+    <div class="article-item" data-category="journal entry">
+      <h3>garden outlook</h3>
+      <div class="article-meta">24.08.2025</div>
+      <div class="article-category">journal entry</div>
+      <div class="article-description">so long!</div>
+    </div>
+  <a href="poem3.html" class="article-link" onclick="loadArticle('writings/poem3.html'); return false;">
+    <div class="article-item" data-category="poem">
+      <h3>the moon has now eclipsed the sun</h3>
+      <div class="article-meta">24.08.2025</div>
+      <div class="article-category">poem</div>
+      <div class="article-description">a light beam poked me and burned this hole</div>
+    </div>
+  </a>
+
+  <a href="poem2.html" class="article-link" onclick="loadArticle('writings/poem2.html'); return false;">
+    <div class="article-item" data-category="poem">
+      <h3>la mer</h3>
+      <div class="article-meta">19.08.2025</div>
+      <div class="article-category">poem</div>
+      <div class="article-description">“La mer” is the French word for “the sea.” It refers to...</div>
+    </div>
+  </a>
+
+  <a href="poem1.html" class="article-link" onclick="loadArticle('writings/poem1.html'); return false;">
+    <div class="article-item" data-category="poem">
+      <h3>locked room</h3>
+      <div class="article-meta">17.08.2025</div>
+      <div class="article-category">poem</div>
+      <div class="article-description">my ark</div>
+    </div>
+  </a>
+
+  <a href="entry1.html" class="article-link" onclick="loadArticle('writings/entry1.html'); return false;">
+    <div class="article-item" data-category="journal entry">
+      <h3>little creatures</h3>
+      <div class="article-meta">17.08.2025</div>
+      <div class="article-category">journal entry</div>
+      <div class="article-description">this is (not) a test</div>
+    </div>
+  </a>
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="right-half">
+    <iframe id="previewFrame" src=""></iframe>
+  </div>
+</div>
+
+<footer>© 2025 maja braumberger. all rights reserved.</footer>
+
+<script>
+function loadArticle(url) {
+  const frame = document.getElementById("previewFrame");
+  if (frame) frame.src = url;
+}
+
+function filterArticles(category, clickedLink) {
+  const articles = document.querySelectorAll(".article-item");
+  articles.forEach(article => {
+    const artCat = article.getAttribute("data-category");
+    if (category === 'all' || artCat === category) {
+      article.style.display = "";
+    } else {
+      article.style.display = "none";
+    }
+  });
+
+  document.querySelectorAll('.filter-links a').forEach(link => {
+    link.classList.remove('active-filter');
+  });
+  clickedLink.classList.add('active-filter');
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("articles");
+  
+  const articleLinks = Array.from(container.querySelectorAll('.article-link'));
+
+  articleLinks.sort((a, b) => {
+    const dateA = new Date(
+      a.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-')
+    );
+    const dateB = new Date(
+      b.querySelector('.article-meta').textContent.trim().split('.').reverse().join('-')
+    );
+    return dateB - dateA;
+  });
+
+  container.innerHTML = '';
+  articleLinks.forEach(link => container.appendChild(link));
+});
+
+</script>
+
+</body>
+</html>
+
+
+
+

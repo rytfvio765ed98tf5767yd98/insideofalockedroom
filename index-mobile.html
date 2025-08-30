@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inside of a locked room | maja braumberger</title>
+        <meta name="description" content="a lone art gallery">
+    <meta name="keywords" content="dark art, dark photography, monochrome art, black and white photography, fine art photography, conceptual art, existential themes, surreal imagery, psychological art, poetic visuals, visual storytelling, emotional photography, moody art, minimalistic art, atmospheric photography, introspective art, art of solitude, abstract photography, contemporary fine art, artistic expression, dark surrealism">
+    <meta name="author" content="Maja Braumberger">
+    <meta http-equiv="refresh" content="180">
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #aaa;
+  line-height: 1.6;
+  overflow: auto;
+  height: 100%;
+}
+
+body {
+  background-image: url('maja-braumberger-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  z-index: 10;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  text-align: center;  
+}
+
+.header-title {
+  font-size: 22px; 
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.header-links {
+  display: flex;
+  gap: 8px;            
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;       
+}
+
+.header-links a {
+  text-decoration: none;
+  color: #888;
+  font-size: 16px;
+}
+
+.header-links a:hover {
+  color: #fff;
+}
+
+.separator {
+  font-size: 18px;
+  color: #666;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+
+.video-container {
+  width: 100%;
+  max-width: 360px; 
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.side-panel {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  background: rgba(10, 10, 10, 0.74);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 8px 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 25;
+  max-width: 95vw; 
+  overflow-x: auto;
+  scrollbar-width: none; 
+}
+
+.side-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.panel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; 
+}
+
+.panel-item img {
+  width: 60px; 
+  height: 34px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.panel-item span {
+  margin-top: 6px;
+  color: #ddd;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: monospace;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.panel-item:hover {
+  transform: translateY(-4px);
+}
+
+.panel-item:hover img {
+  transform: scale(1.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.panel-item.with-separator::after {
+  content: '|';
+  color: rgba(102, 102, 102, 0.38);
+  font-size: 35px;
+  margin-top: -6px;
+  margin-left: 12px;
+  margin-right: 12px;
+  align-self: center;
+}
+
+.button {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 30;
+}
+
+.button img {
+  display: block;
+  height: 30px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 8px 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+  color: #555;
+  font-size: 12px;
+
+      mix-blend-mode:exclusion;
+
+}
+.back-to-desktop {
+  display: inline-block;
+  margin: 12px auto 0 auto;
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid #888;
+  padding: 6px 12px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #ccc;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0; 
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.back-to-desktop:hover {
+  background: #222;
+  color: #fff;
+  border-color: #fff;
+}
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-links {
+  margin-bottom: 8px;
+}
+
+
+  </style>
+</head>
+<body>
+
+ 
+<header>
+  <div class="header-title">inside of a locked room</div>
+  <nav class="header-links">
+    <a href="about-mobile.html">about</a>
+    <span class="separator">|</span>
+    <a href="contact.html">contact</a>
+  </nav>
+  <a href="index.html" class="back-to-desktop">« back to desktop version</a>
+</header>
+
+
+
+<div class="side-panel">
+  <a href="works-mobile.html" class="panel-item">
+    <img src="misc/icons/worksicon.png" alt="works icon" />
+    <span>works</span>
+  </a>
+
+  <a href="writings.html" class="panel-item">
+    <img src="misc/icons/writingsicon.png" alt="writings icon" />
+    <span>writings</span>
+  </a>
+
+
+  
+  <a href="sitemap.html" class="panel-item with-separator">
+  </a>
+  
+  <a href="https://annoise.atabook.org/" class="panel-item">
+    <img src="misc/icons/guestbookicon.png" alt="Guestbook Icon" />
+    <span>guestbook</span>
+  </a>
+
+  <a href="newsletter.html" class="panel-item">
+    <img src="misc/icons/newsletter.gif" alt="Newsletter Icon" />
+    <span>newsletter</span>
+  </a>
+  <a href="sitemap.html" class="panel-item">
+    <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
+    <span>sitemap</span>
+  </a>
+</div>
+
+  <main>
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="index.webm" type="video/webm">
+        <source src="index.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  </main>
+  
+  
+  <div class="button">
+<map name="noaimini5">
+<area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+<area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+<area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+<area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+</map>
+<img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
+<a href="index.html">
+      <img src="majabraumberger-button.gif" alt="mb button" />
+    </a>
+  </div>
+ 
+  <footer>
+    <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
+  </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

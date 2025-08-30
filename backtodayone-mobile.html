@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>back to day one | mb</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+        <meta name="description" content="a lone art gallery">
+    <meta name="keywords" content="dark art, dark photography, monochrome art, black and white photography, fine art photography, conceptual art, existential themes, surreal imagery, psychological art, poetic visuals, visual storytelling, emotional photography, moody art, minimalistic art, atmospheric photography, introspective art, art of solitude, abstract photography, contemporary fine art, artistic expression, dark surrealism">
+    <meta name="author" content="Maja Braumberger">
+    <meta http-equiv="refresh" content="180">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #000;
+      color: #aaa;
+      text-align: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 10px 10px 27px;
+    }
+
+    .header-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .header-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-weight: bold;
+      font-size: 20px;
+      color: #ffffff;
+      margin-top: 8px;
+    }
+
+    .header-links a {
+      text-decoration: none;
+      color: #888;
+      transition: color 0.2s ease;
+    }
+
+    .header-links a:hover {
+      color: #fff;
+    }
+
+    .separator {
+      color: #9b9b9b;
+      font-size: 20px;
+      margin: 0 71px;
+      user-select: none;
+      font-weight: bold;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 600px;
+      margin: 16px auto;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .main-image img.flash {
+      animation: flashEffect 0.3s ease-in-out;
+    }
+
+    @keyframes flashEffect {
+      0% { opacity: 1; filter: brightness(1); }
+      15% { opacity: 0.6; filter: brightness(2.5); }
+      30% { opacity: 0.9; filter: brightness(1.5); }
+      50% { opacity: 1; filter: brightness(1); }
+    }
+
+    .thumbnails {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding: 8px;
+      scroll-snap-type: x mandatory;
+      opacity: 0.3;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    .thumbnails:hover {
+      opacity: 1;
+    }
+
+    .thumbnails img {
+      width: 110px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+      cursor: pointer;
+    }
+
+    .project-content {
+      background: #fff;
+      color: #000;
+      text-align: left;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 12px;
+    }
+
+    .project-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .project-date {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .project-text {
+      font-size: 15px;
+      line-height: 1.4;
+      text-align: justify;
+    }
+
+    footer {
+      font-size: 12px;
+      color: #777;
+      margin: 20px 0;
+    }
+
+    .logo-column {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .logo-column img {
+      width: 60px;
+      border-radius: 6px;
+    }
+
+    .corner-image {
+      margin: 20px 0;
+    }
+
+    .corner-image img {
+      width: 100px;
+      border-radius: 12px;
+    }
+
+    .corner-label {
+      display: block;
+      color: #fff;
+      font-size: 10px;
+      font-family: monospace;
+      margin-top: 4px;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title">inside of a locked room</div>
+    <nav class="header-links">
+      <a href="index-mobile.html">main page</a>
+      <span class="separator">❍</span>
+      <a href="sitemap-mobile.html">sitemap</a>
+    </nav>
+  </header>
+
+  <div class="main-image">
+    <img id="mainImage" src="projects/photography/backtodayone/btdo-idle.webp" alt="main">
+  </div>
+
+  <div class="thumbnails" id="thumbs">
+    <img src="projects/photography/backtodayone/1.webp" alt="1">
+    <img src="projects/photography/backtodayone/2.webp" alt="2">
+    <img src="projects/photography/backtodayone/3.webp" alt="3">
+    <img src="projects/photography/backtodayone/4.webp" alt="4">
+    <img src="projects/photography/backtodayone/5.webp" alt="5">
+    <img src="projects/photography/backtodayone/6.webp" alt="6">
+    <img src="projects/photography/backtodayone/7.webp" alt="7">
+    <img src="projects/photography/backtodayone/8.webp" alt="8">
+    <img src="projects/photography/backtodayone/9.webp" alt="9">
+  </div>
+
+  <div class="project-content">
+    <h1 class="project-title">back to day one</h1>
+    <div class="project-date">27 june 2024</div>
+      <p class="project-text">Alienation, identity crisis, fear of all the inevitable processes occurring in nature - these are the results of a distorted perception of reality. The digital era has become a bridge for highlighting extremities and an alternate realm conducive to fixations on one's persona. 
+ </p>
+        <p class="project-text">"Back to Day One" is a proposition to stop for a moment and try to reconstruct our personal definitions of the reality we're surrounded by - the reality from which the majority of people have cut ties. We live in artificially created worlds, almost not acknowledging the existence of the one that dictates whether we are able to exist or not. We actively attribute the highest priority to anguish, whose presence is dependent only on one's mind. Currently, it seems like society is in constant search of things that make a person stand out, completely overlooking the beauty that lies in oneness with the rest of the world (or it remains intentionally ignored). </p>
+    <footer style="font-size: 12px; color: #555; margin-top: 12px;">
+              This project was made possible thanks to the immeasureable support of <a href="https://www.facebook.com/imageworkspoland/" target="_blank" style="color: #555; text-decoration: underline;">ImageWorks Anita Andrzejewska & Andrzej Pilichowski-Ragno</a>. 
+    </footer>
+  </div>
+
+  <footer>© 2025 maja braumberger. all rights reserved.</footer>
+
+  <div class="logo-column">
+    <a href="https://www.facebook.com/imageworkspoland/" target="_blank"><img src="misc/logo/imageworkspoland.png" alt="pasempoczole"></a>
+    <br>
+    <a href="index.html"><img src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" /></a>
+  </div>
+
+  <br>
+
+
+
+  <script>
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+    const thumbs = document.getElementById('thumbs');
+
+    
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        mainImage.src = thumbnail.src;
+        mainImage.alt = thumbnail.alt;
+        mainImage.classList.add('flash');
+        setTimeout(() => mainImage.classList.remove('flash'), 300);
+        thumbs.classList.add('dimmed');
+        if (scrollInterval) {
+          clearInterval(scrollInterval);
+          scrollInterval = null;
+        }
+      });
+    });
+
+   
+    thumbs.addEventListener('mouseover', () => thumbs.style.opacity = "1");
+    thumbs.addEventListener('mouseout', () => thumbs.style.opacity = "0.3");
+
+    
+    let scrollInterval = null;
+    window.addEventListener('load', () => {
+      const maxScrollLeft = thumbs.scrollWidth - thumbs.clientWidth;
+      if (maxScrollLeft > 0) {
+        let direction = 1;
+        scrollInterval = setInterval(() => {
+          if (direction === 1) {
+            thumbs.scrollTo({ left: maxScrollLeft, behavior: 'smooth' });
+          } else {
+            thumbs.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+          direction *= -1;
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+

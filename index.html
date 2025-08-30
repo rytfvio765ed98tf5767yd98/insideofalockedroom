@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script data-goatcounter="https://annoise.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js">
+    </script>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8">
+      <meta name="description" content="a lone art gallery">
+    <meta name="keywords" content="dark art, dark photography, monochrome art, black and white photography, fine art photography, conceptual art, existential themes, surreal imagery, psychological art, poetic visuals, visual storytelling, emotional photography, moody art, minimalistic art, atmospheric photography, introspective art, art of solitude, abstract photography, contemporary fine art, artistic expression, dark surrealism">
+    <meta name="author" content="Maja Braumberger">
+    <meta http-equiv="refresh" content="180">
+  <title>inside of a locked room | maja braumberger</title>
+  
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000;
+      font-family: sans-serif;
+      color: #aaa;
+      position: relative;
+    }
+
+    body {
+      background-image: url('maja-braumberger-bg.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    
+    #versionSelectOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #versionSelectOverlay h1 {
+      font-size: 26px;
+      margin-bottom: 30px;
+      letter-spacing: -1px;
+    }
+
+    .version-btn {
+      background: #111;
+      border: 2px solid #444;
+      color: #fff;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.2s ease;
+    }
+
+    .version-btn:hover {
+      background: #333;
+      border-color: #777;
+    }
+
+  
+    header {
+      position: absolute;
+      letter-spacing: -1px;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .header-title {
+      font-family: sans-serif;
+      font-size: 29px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+
+
+ 
+
+    .video-container {
+      width: 500px;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+      text-align: center;
+    }
+
+
+
+.copyright {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #ffffff;
+  font-family: monospace;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 199;
+    mix-blend-mode:exclusion;
+
+  
+}
+    .separator {
+      color: #9b9b9b; 
+      font-size: 30px;
+      line-height: 1;
+      margin: 0 16px;
+      user-select: none; 
+      font-weight: bold;
+    }
+
+    .header-links .separator {
+      display: inline-flex;
+      align-items: center;
+      height: 32px;
+      line-height: 1;
+    }
+
+.side-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  background: rgba(10, 10, 10, 0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 12px 16px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 25;
+}
+
+
+.panel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.panel-item img {
+  width: 88px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.panel-item span {
+  margin-top: 6px;
+  color: #ddd;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: monospace;
+  text-transform: lowercase;
+  text-align: center;
+}
+
+.panel-item:hover {
+  transform: translateY(-4px);
+}
+
+.panel-item:hover img {
+  transform: scale(1.05);
+  border-color: rgba(255,255,255,0.2);
+}
+
+
+    .header-sub-links {
+      display: flex;
+      font-weight: normal;
+      gap: 56px;
+      font-size: 23px;
+      color: #888;
+      font-family: sans-serif;
+    }
+
+    .header-sub-links a {
+      color: #888;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .header-sub-links a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .version-btn {
+  background: #111;
+  border: 2px solid #444;
+  color: #fff;
+      letter-spacing: 4px;
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Courier, monospace; 
+  transition: all 0.2s ease;
+}
+.version-note {
+  margin-top: 40px;
+  font-size: 16px;
+  font-family: Courier, monospace;
+  color: #aaa;
+  text-align: center;
+  max-width: 400px;
+  margin-top: 150px;
+  line-height: 1.4;
+}
+.version-footer {
+  position: absolute;
+  bottom: 20px;
+  font-family: , monospace;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+ 
+
+    
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.logo-fixed-right {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: auto;
+  opacity: 1;
+  border-radius: 50px;
+  z-index: 30;
+}
+  .logo-fixed-left {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;  
+  width: 80px;
+  height: auto;
+  opacity: 1;
+  border-radius: 50%;
+  z-index: 30;
+  animation: float 3s ease-in-out infinite;
+}
+
+
+.header-center-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+
+.button {
+  position: fixed;
+  bottom: 30px; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center; 
+  gap: 12px; 
+}
+
+
+  
+    @media (max-width: 768px) {
+      .button {
+        display: none;
+      }
+    } 
+    
+    
+
+.panel-item.with-separator::after {
+  content: '|';
+  color: rgba(102, 102, 102, 0.38);
+  font-size: 55px;
+  margin-left: 18px;
+  margin-right: 18px;
+  align-self: center;
+}
+
+.changelog-box {
+  position: fixed;
+  bottom: 120px; 
+  right: 20px;
+  width: 260px;
+  max-height: 180px;
+  background: rgba(0,0,0,0.6);
+  color: #ccc;
+  font-family: monospace;
+  font-size: 13px;
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  z-index: 40;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+.changelog-title {
+  background: rgba(255,255,255,0.05);
+  padding: 6px 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.changelog-content {
+  padding: 10px;
+  max-height: 130px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.changelog-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.changelog-content::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+    .video-container {
+  position: relative;
+  transition: opacity 0.6s ease;
+}
+
+.video-container video {
+  transition: opacity 0.6s ease;
+  z-index: 1;
+  position: relative;
+}
+
+
+.video-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1),
+    hsla(0, 0%, 0%, 0) 2px,
+    transparent 4px
+  );
+  mix-blend-mode: difference;
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+
+.video-container:hover video {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.video-container:hover::after {
+  opacity: 1;
+}
+
+
+.video-container:not(:hover) video {
+  opacity: 1;
+  transition: opacity 0.1s ease-in;
+}
+
+.video-container:not(:hover)::after {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+
+  </style>
+  
+</head>
+  
+<body>
+  
+
+<div id="versionSelectOverlay">
+  <div class="header-center-overlay">
+
+<map name="noaimini12b">
+<area href="https://baccyflap.com/noai" shape="rect" coords="42,0,132,62" target="_blank" alt="no ai webring" title="no ai webring">
+<area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="0,0,40,62" alt="previous" title="previous">
+<area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="134,0,174,62" alt="next" title="next">
+</map>
+<img style="width:176px;image-rendering:pixelated;filter: grayscale(100%);" usemap="#noaimini12b" src="https://baccyflap.com/noai/miniwidget12.gif" alt="a green printed circuit board with two golden triangles pointing left and right. on the pcb is written THE NO AI WEBRING where the AI is written in the spot where a chip ought to be, but isn't">
+  </div>
+
+  <h1>choose your version</h1>
+
+  <div class="version-buttons">
+    <button class="version-btn" onclick="chooseVersion('mobile')">mobile</button>
+    <button class="version-btn" onclick="chooseVersion('desktop')">desktop</button>
+  </div>
+
+  <div class="version-note">
+    this website was designed with computer displays in mind<br><br>
+    and is best experienced that way
+  </div>
+
+  <div class="version-footer">
+    follow the noise
+  </div>
+</div>
+
+
+
+
+<header class="header">
+  <div class="header-left" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+    <div class="header-title">inside of a locked room</div>
+    
+    <nav class="header-sub-links">
+      <a href="about.html">about</a>
+      <span class="separator">❍</span>
+      <a href="contact.html">contact</a>
+    </nav>
+  </div>
+
+ 
+<div class="side-panel">
+  <a href="works.html" class="panel-item">
+    <img src="misc/icons/worksicon.png" alt="works icon" />
+    <span>works</span>
+  </a>
+
+  <a href="writings.html" class="panel-item">
+    <img src="misc/icons/writingsicon.png" alt="writings icon" />
+    <span>writings</span>
+  </a>
+
+
+  
+  <a href="sitemap.html" class="panel-item with-separator">
+  </a>
+  
+  <a href="https://annoise.atabook.org/" class="panel-item">
+    <img src="misc/icons/guestbookicon.png" alt="Guestbook Icon" />
+    <span>guestbook</span>
+  </a>
+
+  <a href="newsletter.html" class="panel-item">
+    <img src="misc/icons/newsletter.gif" alt="Newsletter Icon" />
+    <span>newsletter</span>
+  </a>
+  <a href="sitemap.html" class="panel-item">
+    <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
+    <span>sitemap</span>
+  </a>
+</div>
+
+  
+</header>
+
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="index.webm" type="video/webm">
+    <source src="index.mp4" type="video/mp4">
+  </video>
+</div>
+
+<a href="message.html">
+  <img class="logo-fixed-left" src="misc/logo/clippy.jpg" alt="Logo" />
+</a>
+<img class="logo-fixed-right" src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
+
+  <div class="button">
+<map name="noaimini5">
+<area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+<area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+<area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+<area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+</map>
+<img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
+<a href="index.html">
+      <img src="majabraumberger-button.gif" alt="mb button" />
+    </a>
+  </div>
+  
+<footer>
+  <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
+</footer>
+
+
+
+
+
+  
+<script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const savedVersion = localStorage.getItem("siteVersion");
+    const overlay = document.getElementById("versionSelectOverlay");
+
+    if (savedVersion === "desktop") {
+      overlay.style.display = "none";
+    } else if (savedVersion === "mobile") {
+      window.location.href = "index-mobile.html";
+    }
+  });
+
+  function chooseVersion(version) {
+    localStorage.setItem("siteVersion", version);
+    if (version === "mobile") {
+      window.location.href = "index-mobile.html";
+    } else if (version === "desktop") {
+      document.getElementById("versionSelectOverlay").style.display = "none";
+    }
+  }
+  
+</script>
+  
+<div class="changelog-box">
+  <div class="changelog-title">changelog</div>
+  <div class="changelog-content">
+    <p><strong>18.08.2025:</strong> the website is now officially in its beta stage. have a seat, no major layout changes planned. for now.</p>
+  
+   
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
