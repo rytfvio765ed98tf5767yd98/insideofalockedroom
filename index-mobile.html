@@ -1,265 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script data-goatcounter="https://annoise.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js">
+    </script>
+  <link rel="icon" href="favicon.png" type="image/png">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>inside of a locked room | maja braumberger</title>
-        <meta name="description" content="a lone art gallery">
+      <meta name="description" content="a lone art gallery">
     <meta name="keywords" content="dark art, dark photography, monochrome art, black and white photography, fine art photography, conceptual art, existential themes, surreal imagery, psychological art, poetic visuals, visual storytelling, emotional photography, moody art, minimalistic art, atmospheric photography, introspective art, art of solitude, abstract photography, contemporary fine art, artistic expression, dark surrealism">
     <meta name="author" content="Maja Braumberger">
     <meta http-equiv="refresh" content="180">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <title>inside of a locked room | maja braumberger</title>
+  
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000;
+    font-family: sans-serif;
+    color: #aaa;
+    position: relative;
+    overflow: auto;
+  }
+  
 
-  <style>
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #000;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #aaa;
-  line-height: 1.6;
-  overflow: auto;
-  height: 100%;
-}
-
-body {
-  background-image: url('maja-braumberger-bg.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 10px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;  
-  z-index: 10;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  text-align: center;  
-}
-
-.header-title {
-  font-size: 22px; 
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: -1px;
-  margin-bottom: 8px;
-}
-
-.header-links {
-  display: flex;
-  gap: 8px;            
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;       
-}
-
-.header-links a {
-  text-decoration: none;
-  color: #888;
-  font-size: 16px;
-}
-
-.header-links a:hover {
-  color: #fff;
-}
-
-.separator {
-  font-size: 18px;
-  color: #666;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
+  body {
+    background-image: url('maja-braumberger-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
 
-.video-container {
-  width: 100%;
-  max-width: 360px; 
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-}
 
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+  header {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
 
-.side-panel {
-  position: fixed;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  background: rgba(10, 10, 10, 0.74);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 12px;
-  padding: 8px 12px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  z-index: 25;
-  max-width: 95vw; 
-  overflow-x: auto;
-  scrollbar-width: none; 
-}
+  .header-left {
+    align-items: center !important;
+    margin-top: 20px;
+    flex-direction: column;
+    display: flex;
+    gap: 6px;
+  }
 
-.side-panel::-webkit-scrollbar {
-  display: none;
-}
+  .header-title {
+    font-family: sans-serif;
+    font-size: 29px;
+    font-weight: bold;
+    color: #ffffff;
+  }
 
-.panel-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-  flex-shrink: 0; 
-}
+  .header-sub-links {
+    display: flex;
+    font-weight: normal;
+    gap: 56px;
+    font-size: 23px;
+    color: #888;
+    font-family: sans-serif;
+  }
 
-.panel-item img {
-  width: 60px; 
-  height: 34px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
+  .header-sub-links a {
+    color: #888;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
 
-.panel-item span {
-  margin-top: 6px;
-  color: #ddd;
-  font-size: 12px;
-  letter-spacing: 1px;
-  font-family: monospace;
-  text-transform: lowercase;
-  text-align: center;
-}
+  .header-sub-links a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 
-.panel-item:hover {
-  transform: translateY(-4px);
-}
+  .separator {
+    color: #9b9b9b;
+    font-size: 30px;
+    line-height: 1;
+    margin: 0 16px;
+    user-select: none;
+    font-weight: bold;
+  }
 
-.panel-item:hover img {
-  transform: scale(1.05);
-  border-color: rgba(255,255,255,0.2);
-}
+  .header-links .separator {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
+    line-height: 1;
+  }
 
-.panel-item.with-separator::after {
-  content: '|';
-  color: rgba(102, 102, 102, 0.38);
-  font-size: 35px;
-  margin-top: -6px;
-  margin-left: 12px;
-  margin-right: 12px;
-  align-self: center;
-}
+  .video-container {
+    width: 500px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.6s ease;
+  }
 
-.button {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-  z-index: 30;
-}
+  .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+    position: relative;
+  }
 
-.button img {
-  display: block;
-  height: 30px;
-  cursor: pointer;
-}
+  .video-container::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.1),
+      hsla(0, 0%, 0%, 0) 2px,
+      transparent 4px
+    );
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
-footer {
-  text-align: center;
-  padding: 8px 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 5;
-  color: #555;
-  font-size: 12px;
 
-      mix-blend-mode:exclusion;
+  .side-panel {
+    position: static;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+    max-width: 90%;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    background: rgba(10, 10, 10, 0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    z-index: 25;
+  }
 
-}
+  .panel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+
+  .panel-item img {
+    width: 66px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: filter 0.3s ease, border-color 0.3s ease;
+  }
+
+  .panel-item span {
+    margin-top: 6px;
+    color: #ddd;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: monospace;
+    text-transform: lowercase;
+    text-align: center;
+  }
+
+  .panel-item:hover img {
+    filter: invert(1);
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .panel-item.with-separator::after {
+    content: '|';
+    color: rgba(102, 102, 102, 0.38);
+    font-size: 55px;
+    margin-left: 18px;
+    margin-right: 18px;
+    align-self: center;
+  }
+
+  .changelog-box {
+    display: none;
+  }
+
+  .copyright {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #ffffff;
+    font-family: monospace;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 199;
+    mix-blend-mode: exclusion;
+  }
+
+  .logo-fixed-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: auto;
+    opacity: 1;
+    border-radius: 50px;
+    z-index: 30;
+  }
+
+  .logo-fixed-left {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    height: auto;
+    opacity: 1;
+    border-radius: 50%;
+    z-index: 30;
+  }
+
+  .header-center-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    position: fixed;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .version-note {
+    margin-top: 150px;
+    font-size: 16px;
+    font-family: Courier, monospace;
+    color: #aaa;
+    text-align: center;
+    max-width: 400px;
+    line-height: 1.4;
+  }
+
+  .version-footer {
+    position: absolute;
+    bottom: 20px;
+    font-family: monospace;
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 2px;
+  }
 .back-to-desktop {
   display: inline-block;
-  margin: 12px auto 0 auto;
-  background: rgba(20, 20, 20, 0.85);
-  border: 1px solid #888;
-  padding: 6px 12px;
-  font-family: monospace;
+  margin: 30px auto 0 auto;
+  padding: 10px 18px;
   font-size: 14px;
+  font-family: sans-serif;
   color: #ccc;
-  cursor: pointer;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 0; 
-  user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  white-space: nowrap;
   text-align: center;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, color 0.3s ease;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  width: fit-content;
 }
 
 .back-to-desktop:hover {
-  background: #222;
   color: #fff;
-  border-color: #fff;
+  background-color: rgba(60, 60, 60, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+</style>
 
-.header-links {
-  margin-bottom: 8px;
-}
-
-
-  </style>
+  
 </head>
+  
 <body>
+ 
+
+
+
+
+
+
+
+<header class="header">
+  <div class="header-left" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+    <div class="header-title">inside of a locked room</div>
+    
+    <nav class="header-sub-links">
+      <a href="about-mobile.html">about</a>
+      <span class="separator">❍</span>
+      <a href="contact-mobile.html">contact</a>
+    </nav>
+  </div>
 
  
-<header>
-  <div class="header-title">inside of a locked room</div>
-  <nav class="header-links">
-    <a href="about-mobile.html">about</a>
-    <span class="separator">|</span>
-    <a href="contact.html">contact</a>
-  </nav>
-  <a href="index.html" class="back-to-desktop">« back to desktop version</a>
-</header>
-
-
-
 <div class="side-panel">
   <a href="works-mobile.html" class="panel-item">
     <img src="misc/icons/worksicon.png" alt="works icon" />
@@ -294,18 +360,24 @@ header {
   </a>
 
 </div>
+<a href="index.html" class="back-to-desktop">« back to desktop version</a>
 
-  <main>
-    <div class="video-container">
-      <video autoplay muted loop playsinline>
-        <source src="index.webm" type="video/webm">
-        <source src="index.mp4" type="video/mp4">
-      </video>
-    </div>
+  
+</header>
 
-  </main>
-  
-  
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="index.webm" type="video/webm">
+    <source src="index.mp4" type="video/mp4">
+  </video>
+</div>
+
+<a href="https://consumerrights.wiki/Clippy_Campaign">
+  <img class="logo-fixed-left" src="misc/logo/clippy.gif" alt="Clippy GIF" />
+</a>
+
+<img class="logo-fixed-right" src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
+
   <div class="button">
 <map name="noaimini5">
 <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
@@ -318,13 +390,44 @@ header {
       <img src="majabraumberger-button.gif" alt="mb button" />
     </a>
   </div>
- 
-  <footer>
-    <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
-  </footer>
+  
+<footer>
+  <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
+</footer>
 
+
+
+
+
+  
+<script>
+
+
+
+  
+</script>
+  
+<div class="changelog-box">
+  <div class="changelog-title">changelog</div>
+  <div class="changelog-content">
+    <p><strong>18.08.2025:</strong> the website is now officially in its beta stage. have a seat, no major layout changes planned. for now.</p>
+  
+   
+  </div>
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
