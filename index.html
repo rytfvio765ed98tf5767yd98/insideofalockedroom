@@ -463,6 +463,7 @@
   
 
 <div id="versionSelectOverlay">
+  <img src="majabraumberger-button.gif" alt="mb button" /><br>
   <div class="header-center-overlay">
 
 <map name="noaimini12b">
@@ -576,18 +577,53 @@
 
 
 
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const version = localStorage.getItem('chosenVersion');
+    if (version === 'desktop') {
+      document.getElementById("versionSelectOverlay").style.display = "none";
+    } else if (version === 'mobile') {
+  
+      window.location.href = "index-mobile.html";
+    }
+  });
+</script>
 
   
 <script>
 
 
 function chooseVersion(version) {
+  localStorage.setItem('chosenVersion', version);
+  
   if (version === "mobile") {
     window.location.href = "index-mobile.html";
   } else if (version === "desktop") {
     document.getElementById("versionSelectOverlay").style.display = "none";
   }
 }
+
+const TAB_KEY = 'openTabsCount';
+
+window.addEventListener('storage', (e) => {
+  if (e.key === TAB_KEY && parseInt(e.newValue, 10) === 0) {
+    localStorage.removeItem('chosenVersion');
+  }
+});
+
+window.addEventListener('beforeunload', () => {
+  
+  let count = parseInt(localStorage.getItem(TAB_KEY) || '1', 10);
+  count = Math.max(0, count - 1);
+  localStorage.setItem(TAB_KEY, count.toString());
+});
+
+window.addEventListener('load', () => {
+
+  let count = parseInt(localStorage.getItem(TAB_KEY) || '0', 10);
+  count += 1;
+  localStorage.setItem(TAB_KEY, count.toString());
+});
 
   
 </script>
@@ -602,8 +638,6 @@ function chooseVersion(version) {
 </div>
 </body>
 </html>
-
-
 
 
 
