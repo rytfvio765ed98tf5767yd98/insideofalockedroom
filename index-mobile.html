@@ -220,13 +220,13 @@ header {
   transform: none;
   display: flex;
   justify-content: center;
-  margin: 260px auto 0 auto;
+  margin: 1px auto 0 auto;
   gap: 12px;
   flex-wrap: wrap;
 }
 
 .button img {
-  width: 80px;
+  width: 90px;
   height: auto;
 }
 
@@ -257,11 +257,31 @@ header {
   opacity: 0.8;
   pointer-events: none;
   text-align: center;
-  margin-top: 18px;
+  margin-top: -14px;
 }
 
 .changelog-box {
   display: none;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.main-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button {
+  margin: 0 auto 20px auto; 
+}
+
+footer {
+  text-align: center;
+  padding: 0px;
 }
 
 </style>
@@ -272,6 +292,7 @@ header {
 <body>
  
 
+<div class="main-wrapper">
 
 
 
@@ -355,7 +376,7 @@ header {
       <img src="majabraumberger-button.gif" alt="mb button" />
     </a>
   </div>
-  
+  </div>
 <footer>
   <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
 </footer>
