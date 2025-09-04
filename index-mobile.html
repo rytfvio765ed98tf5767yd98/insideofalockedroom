@@ -275,7 +275,7 @@ body, html {
   justify-content: space-between;
 }
 
-.button {
+.button  {
   margin: 0 auto 20px auto; 
 }
 
@@ -346,9 +346,8 @@ footer {
   </a>
 
 </div>
-<a href="index.html" class="back-to-desktop">« back to desktop version</a>
 
-  
+<button onclick="goToDesktop()">switch to desktop version</button>
 </header>
 
 
@@ -381,12 +380,15 @@ footer {
 
 
   
+
+
 <script>
-
-
-
-  
+  function goToDesktop() {
+    localStorage.setItem('chosenVersion', 'desktop');
+    window.location.href = 'index.html';
+  }
 </script>
+
   
 <div class="changelog-box">
   <div class="changelog-title">changelog</div>
