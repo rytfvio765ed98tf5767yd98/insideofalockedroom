@@ -10,275 +10,167 @@
     <meta name="keywords" content="dark art, dark photography, monochrome art, black and white photography, fine art photography, conceptual art, existential themes, surreal imagery, psychological art, poetic visuals, visual storytelling, emotional photography, moody art, minimalistic art, atmospheric photography, introspective art, art of solitude, abstract photography, contemporary fine art, artistic expression, dark surrealism">
     <meta name="author" content="Maja Braumberger">
     <meta http-equiv="refresh" content="180">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>inside of a locked room | maja braumberger</title>
   
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #000;
-    font-family: sans-serif;
-    color: #aaa;
-    position: relative;
-    overflow: auto;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000;
+  font-family: sans-serif;
+  color: #aaa;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url('maja-braumberger-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  position: static;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.header-left {
+  margin-top: 18px;
+  flex-direction: column;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.header-sub-links {
+  display: center;
+  flex-wrap: wrap;
   
+  justify-content: center;
+  gap: 24px;
+  font-size: 18px;
+  color: #888;
+}
 
-  body {
-    background-image: url('maja-braumberger-bg.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+.header-sub-links a {
+  color: #888;
+  font-weight: bold;
+  text-decoration: none;
+}
 
+.header-sub-links a:hover {
+  color: #fff;
+}
 
+.separator {
+  color: #9b9b9b;
+  font-size: 20px;
+  line-height: 1;
+  user-select: none;
+  font-weight: bold;
+}
 
-  header {
-    position: static;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 18px;
-  }
+.video-container {
+  width: 100%;
+  max-width: 60vw;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+}
 
-  .header-left {
-    align-items: center !important;
-    margin-top: 20px;
-    flex-direction: column;
-    display: flex;
-    gap: 6px;
-  }
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-  .header-title {
-    scale: 125%;
-    font-family: sans-serif;
-    font-size: 29px;
-    font-weight: bold;
-    color: #ffffff;
-  }
+.video-container::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.1),
+    hsla(0, 0%, 0%, 0) 2px,
+    transparent 4px
+  );
+  mix-blend-mode: difference;
+  opacity: 0;
+}
 
-  .header-sub-links {
-    scale:120%;
-    display: flex;
-    font-weight: normal;
-    gap: 56px;
-    font-size: 23px;
-    color: #888;
-    font-family: sans-serif;
-  }
+.side-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 32px auto 0 auto;
+  width: 95%;
+  padding: 10px;
+  gap: 20px;
+  background: rgba(10, 10, 10, 0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
 
-  .header-sub-links a {
-    color: #888;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
+.panel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 80px;
+}
 
-  .header-sub-links a:hover {
-    color: #fff;
-    text-decoration: none;
-  }
+.panel-item img {
+  width: 66px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
-  .separator {
-    color: #9b9b9b;
-    font-size: 30px;
-    line-height: 1;
-    margin: 0 16px;
-    user-select: none;
-    font-weight: bold;
-  }
+.panel-item span {
+  margin-top: 6px;
+  color: #ddd;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-family: monospace;
+  text-transform: lowercase;
+  text-align: center;
+}
 
-  .header-links .separator {
-    display: inline-flex;
-    align-items: center;
-    height: 32px;
-    line-height: 1;
-  }
+.panel-item:hover img {
+  filter: invert(1);
+  border-color: rgba(255,255,255,0.2);
+}
 
-  .video-container {
-    width: 500px;
-    aspect-ratio: 16 / 9;
-    border-radius: 10px;
-    overflow: hidden;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.6s ease;
-  }
+.panel-item.with-separator::after {
+  content: '|';
+  color: rgba(102, 102, 102, 0.38);
+  font-size: 32px;
+  margin-left: 12px;
+  margin-right: 12px;
+  align-self: center;
+}
 
-  .video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.6s ease;
-    z-index: 1;
-    position: relative;
-  }
-
-  .video-container::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.1),
-      hsla(0, 0%, 0%, 0) 2px,
-      transparent 4px
-    );
-    mix-blend-mode: difference;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-
-  .side-panel {
-    scale: 150%;
-    position: static;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 32px auto 0 auto;
-    max-width: 80%;
-    padding: 10px;
-    gap: 25px;
-    display: flex;
-    flex-direction: row;
-    background: rgba(10, 10, 10, 0.5);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 12px;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    z-index: 25;
-  }
-
-  .panel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-  }
-
-  .panel-item img {
-    width: 66px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: filter 0.3s ease, border-color 0.3s ease;
-  }
-
-  .panel-item span {
-    margin-top: 6px;
-    color: #ddd;
-    font-size: 12px;
-    letter-spacing: 2px;
-    font-family: monospace;
-    text-transform: lowercase;
-    text-align: center;
-  }
-
-  .panel-item:hover img {
-    filter: invert(1);
-    border-color: rgba(255,255,255,0.2);
-  }
-
-  .panel-item.with-separator::after {
-    content: '|';
-    color: rgba(102, 102, 102, 0.38);
-    font-size: 55px;
-    margin-left: 18px;
-    margin-right: 18px;
-    align-self: center;
-  }
-
-  .changelog-box {
-    display: none;
-  }
-
-  .copyright {
-    position: fixed;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    color: #ffffff;
-    font-family: monospace;
-    opacity: 1;
-    pointer-events: none;
-    z-index: 199;
-    mix-blend-mode: exclusion;
-  }
-
-  .logo-fixed-right {
-    scale: 125%;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 80px;
-    height: auto;
-    opacity: 1;
-    border-radius: 50px;
-    z-index: 30;
-  }
-
-  .logo-fixed-left {
-    scale: 125%;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    width: 100px;
-    height: auto;
-    opacity: 1;
-    border-radius: 50%;
-    z-index: 30;
-  }
-
-  .header-center-overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-  }
-
-  .button {
-    scale: 125%;
-    position: fixed;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .version-note {
-    margin-top: 150px;
-    font-size: 16px;
-    font-family: Courier, monospace;
-    color: #aaa;
-    text-align: center;
-    max-width: 400px;
-    line-height: 1.4;
-  }
-
-  .version-footer {
-    position: absolute;
-    bottom: 20px;
-    font-family: monospace;
-    font-size: 14px;
-    color: #777;
-    text-align: center;
-    width: 100%;
-    letter-spacing: 2px;
-  }
 .back-to-desktop {
   display: inline-block;
   margin: 30px auto 0 auto;
@@ -292,7 +184,6 @@
   text-decoration: none;
   text-align: center;
   letter-spacing: 1px;
-  transition: background 0.3s ease, color 0.3s ease;
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
@@ -305,7 +196,73 @@
   border-color: rgba(255, 255, 255, 0.3);
 }
 
+.logo-fixed-right,
+.logo-fixed-left {
+  width: 60px;
+  height: auto;
+  position: fixed;
+  bottom: 12px;
+  z-index: 30;
+}
 
+.logo-fixed-right {
+  right: 10px;
+}
+
+.logo-fixed-left {
+  left: 10px;
+}
+
+.button {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  display: flex;
+  justify-content: center;
+  margin: 260px auto 0 auto;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button img {
+  width: 80px;
+  height: auto;
+}
+
+.version-note {
+  margin-top: 60px;
+  font-size: 14px;
+  font-family: Courier, monospace;
+  color: #aaa;
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.4;
+}
+
+.version-footer {
+  font-family: monospace;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.copyright {
+  font-size: 10px;
+  color: #2c2c2c;
+  font-family: monospace;
+  opacity: 0.8;
+  pointer-events: none;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.changelog-box {
+  display: none;
+}
 
 </style>
 
@@ -322,12 +279,13 @@
 
 
 <header class="header">
-  <div class="header-left" style="flex-direction: column; align-items: flex-start; gap: 6px;">
+<div class="header-left">
+
     <div class="header-title">inside of a locked room</div>
     
     <nav class="header-sub-links">
       <a href="about-mobile.html">about</a>
-      <span class="separator">❍</span>
+      <span class="separator">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
       <a href="contact.html">contact</a>
     </nav>
   </div>
