@@ -130,6 +130,16 @@
       margin: 32px 0 12px;
       font-family: monospace;
     }
+    .filter-links .dot {
+  color: #666;
+  margin: 0 10px;
+  font-weight: bold;
+  user-select: none;
+  font-size: 12px;
+  display: inline-block;
+  line-height: 1.5;
+}
+
   </style>
 </head>
 <body>
@@ -145,10 +155,14 @@
 
 <div class="filter-links">
   <a href="#" class="active-filter" onclick="filterArticles('all', this); return false;">all</a>
+  <span class="dot">•</span>
   <a href="#" onclick="filterArticles('prose', this); return false;">prose</a>
+  <span class="dot">•</span>
   <a href="#" onclick="filterArticles('poem', this); return false;">poems</a>
+  <span class="dot">•</span>
   <a href="#" onclick="filterArticles('journal entry', this); return false;">journal</a>
 </div>
+
 
 <div id="articles">
   <a href="writings/prose1.html" class="article-link">
