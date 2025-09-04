@@ -495,6 +495,7 @@
       <span class="separator">❍</span>
       <a href="contact.html">contact</a>
     </nav>
+    
   </div>
 
  
@@ -537,6 +538,7 @@
 </header>
 
 <div class="video-container">
+  
   <video autoplay muted loop playsinline>
     <source src="index.webm" type="video/webm">
     <source src="index.mp4" type="video/mp4">
@@ -550,6 +552,7 @@
 <img class="logo-fixed-right" src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
 
   <div class="button">
+    
 <map name="noaimini5">
 <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
 <area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
@@ -563,6 +566,7 @@
   </div>
   
 <footer>
+  
   <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
 </footer>
 
@@ -621,13 +625,21 @@ window.addEventListener('load', () => {
 </script>
   
 <div class="changelog-box">
+  
   <div class="changelog-title">changelog</div>
   <div class="changelog-content">
     <p><strong>18.08.2025:</strong> the website is now officially in its beta stage. have a seat, no major layout changes planned. for now.</p>
-  
+  <button onclick="goToMobile()">switch to mobile version</button>
+
    
   </div>
 </div>
+  <script>
+  function goToMobile() {
+    localStorage.setItem('chosenVersion', 'mobile');
+    window.location.href = 'index-mobile.html';
+  }
+</script>
 </body>
 </html>
 
