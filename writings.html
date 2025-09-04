@@ -139,7 +139,29 @@
   display: inline-block;
   line-height: 1.5;
 }
+html, body {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #000;
+}
 
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 5px;
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
   </style>
 </head>
 <body>
@@ -253,3 +275,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
