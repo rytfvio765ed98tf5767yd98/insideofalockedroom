@@ -125,17 +125,15 @@
 .copyright {
   position: fixed;
   bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 20px;
+  transform: none;
   font-size: 12px;
   color: #ffffff;
   font-family: monospace;
   opacity: 1;
   pointer-events: none;
   z-index: 199;
-    mix-blend-mode:exclusion;
-
-  
+  mix-blend-mode: exclusion;
 }
     .separator {
       color: #9b9b9b; 
@@ -303,12 +301,14 @@
 
 .button {
   position: fixed;
-  bottom: 35px; 
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 40px; 
+  left: 20px;
+  transform: none;
   display: flex;
-  align-items: center; 
-  gap: 12px; 
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  z-index: 200;
 }
 
 
@@ -541,9 +541,6 @@
 
 
 
-<a href="https://consumerrights.wiki/Clippy_Campaign">
-  <img class="logo-fixed-left" src="misc/logo/clippy.gif" alt="Clippy GIF" />
-</a>
 
 <img class="logo-fixed-right" src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
 
@@ -638,7 +635,6 @@ window.addEventListener('load', () => {
 </script>
 </body>
 </html>
-
 
 
 
