@@ -4,8 +4,6 @@
     <script data-goatcounter="https://annoise.goatcounter.com/count"
         async src="//gc.zgo.at/count.js">
     </script>
-
-
         <meta property="og:image" content="projects/photography/unsorted/clip.webp">
   <link rel="icon" href="favicon.png" type="image/png">
   <meta charset="UTF-8">
@@ -254,13 +252,12 @@ header {
 }
 
 .copyright {
-  font-size: 10px;
-  color: #2c2c2c;
   font-family: monospace;
   opacity: 0.8;
   pointer-events: none;
   text-align: center;
   margin-top: -14px;
+  
 }
 
 .changelog-box {
@@ -285,6 +282,95 @@ body, html {
 footer {
   text-align: center;
   padding: 0px;
+  
+}
+.bottom-left-wrapper {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.bottom-left-wrapper .button {
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.bottom-left-wrapper .button img {
+  width: 90px;
+  height: auto;
+}
+
+.bottom-left-wrapper .copyright {
+  font-size: 10px;
+  color: #ffffff;
+  font-family: monospace;
+  opacity: 0.8;
+  pointer-events: none;
+  text-align: left;
+  margin: 0;
+ 
+}
+.bottom-left-wrapper {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.bottom-left-wrapper .button {
+  margin: 0;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.bottom-left-wrapper .button img {
+  width: 90px;
+  height: auto;
+}
+
+.bottom-left-wrapper .back-to-desktop {
+  padding: 8px 40px;
+  font-size: 13px;
+  font-family: sans-serif;
+  color: #ccc;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+  margin-top: 6px;
+}
+
+.bottom-left-wrapper .back-to-desktop:hover {
+  color: #fff;
+  background-color: rgba(60, 60, 60, 0.8);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.bottom-left-wrapper .copyright {
+  font-size: 10px;
+  color: #ffffff;
+  font-family: monospace;
+  opacity: 0.8;
+  pointer-events: none;
+  text-align: left;
+  margin: 0;
 }
 
 </style>
@@ -329,15 +415,10 @@ footer {
     <img src="misc/icons/directoryicon.png" alt="directory icon" />
     <span>directory</span>
   </a>
-  <a href="sitemap.html" class="panel-item">
-    <img src="misc/icons/sitemapicon.jpg" alt="Sitemap Icon" />
-    <span>sitemap</span>
-  </a>
+
 
   
-  <a href="sitemap.html" class="panel-item with-separator">
-  </a>
-  
+
   <a href="https://annoise.atabook.org/" class="panel-item">
     <img src="misc/icons/guestbookicon.png" alt="Guestbook Icon" />
     <span>guestbook</span>
@@ -350,33 +431,35 @@ footer {
 
 </div>
 
-<button onclick="goToDesktop()">switch to desktop version</button>
+<button class="back-to-desktop" onclick="goToDesktop()">switch to desktop version</button>
+
 </header>
 
 
 
-<a href="https://consumerrights.wiki/Clippy_Campaign">
-  <img class="logo-fixed-left" src="misc/logo/clippy.gif" alt="Clippy GIF" />
-</a>
+
 
 <img class="logo-fixed-right" src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
 
+<div class="bottom-left-wrapper">
   <div class="button">
-<map name="noaimini5">
-<area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
-<area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
-<area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
-<area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
-</map>
-<img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
-<a href="index.html">
+    <map name="noaimini5">
+      <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
+      <area href="https://baccyflap.com/noai/?prv&s=mbx" target="_top" shape="rect" coords="2,2,19,17" alt="previous" title="previous">
+      <area href="https://baccyflap.com/noai/?rnd" target="_top" shape="rect" coords="66,22,70,28" alt="random" title="random">
+      <area href="https://baccyflap.com/noai/?nxt&s=mbx" target="_top" shape="rect" coords="69,2,85,17" alt="next" title="next">
+    </map>
+
+    <img usemap="#noaimini5" src="https://baccyflap.com/noai/miniwidget5.gif" alt="the top of a fuzzy, black sphere with two arrows rising from it, one curving to the left, one to the right. across the bulk of the sphere it reads NO AI / WEBRING in squiggly, uneven letters and next to those words is a small question mark">
+
+    <a href="index.html">
       <img src="majabraumberger-button.gif" alt="mb button" />
     </a>
   </div>
-  </div>
-<footer>
+
   <div class="copyright">© 2025 maja braumberger. all rights reserved.</div>
-</footer>
+</div>
+  </div>
 
 
 
@@ -404,8 +487,6 @@ footer {
 
 </body>
 </html>
-
-
 
 
 
