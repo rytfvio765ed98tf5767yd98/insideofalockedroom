@@ -176,6 +176,8 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
+    
+    
   </style>
 </head>
 <body>
@@ -215,7 +217,7 @@ html, body {
 
     <a href="writings/journal3.html" class="article-link">
     <div class="article-item" data-category="journal entry">
-      <h3>20</h3>
+      <h3>20 lost ones</h3>
       <div class="article-meta">09.09.2025</div>
       <div class="article-category">journal entry</div>
       <div class="article-description">now it's something</div>
@@ -285,7 +287,13 @@ function filterArticles(category, clickedLink) {
   const articles = document.querySelectorAll(".article-item");
   articles.forEach(article => {
     const artCat = article.getAttribute("data-category");
-    article.parentElement.style.display = (category === 'all' || artCat === category) ? "" : "none";
+  const isVisible = (category === 'all' || artCat === category);
+article.parentElement.style.visibility = isVisible ? "visible" : "hidden";
+article.parentElement.style.position = isVisible ? "static" : "absolute";
+article.parentElement.style.height = isVisible ? "auto" : "0";
+article.parentElement.style.overflow = isVisible ? "visible" : "hidden";
+
+
   });
 
   document.querySelectorAll('.filter-links a').forEach(link => {
@@ -311,7 +319,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-
 
 
 
