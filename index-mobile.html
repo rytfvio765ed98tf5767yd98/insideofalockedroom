@@ -123,7 +123,7 @@ header {
   margin: 32px auto 0 auto;
   width: 95%;
   padding: 10px;
-  gap: 50px;
+  gap: 30px;
 
 }
 
@@ -339,8 +339,8 @@ footer {
   height: auto;
 }
 
-.bottom-left-wrapper .back-to-desktop {
-  padding: 8px 40px;
+.back-to-desktop {
+  padding: 12px 40px;
   font-size: 13px;
   font-family: sans-serif;
   color: #ccc;
@@ -351,7 +351,7 @@ footer {
   text-align: center;
   letter-spacing: 1px;
   backdrop-filter: blur(4px);
-  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .bottom-left-wrapper .back-to-desktop:hover {
@@ -421,6 +421,13 @@ footer {
 
  
 <div class="side-panel">
+    <a href="directory.html" class="panel-item">
+    <img src="misc/icons/directoryicon.png" alt="directory icon" />
+    <span>directory</span>
+  </a>
+
+  
+  
   <a href="works-mobile.html" class="panel-item">
     <img src="misc/icons/worksicon.png" alt="works icon" />
     <span>works</span>
@@ -429,17 +436,12 @@ footer {
   <a href="writings.html" class="panel-item">
     <img src="misc/icons/writingsicon.png" alt="writings icon" />
     <span>writings</span>
-    
-    
   </a>
-    <a href="directory.html" class="panel-item">
-    <img src="misc/icons/directoryicon.png" alt="directory icon" />
-    <span>directory</span>
-  </a>
-
+  
+  </div>
 
   
-
+<div class="side-panel">
   <a href="https://annoise.atabook.org/" class="panel-item">
     <img src="misc/icons/guestbookicon.png" alt="Guestbook Icon" />
     <span>guestbook</span>
@@ -452,17 +454,18 @@ footer {
 
 </div>
 
-<button class="back-to-desktop" onclick="goToDesktop()">switch to desktop version</button>
+
 
 </header>
 
 
 
 
+<button class="back-to-desktop" onclick="goToDesktop()">switch to desktop version</button>
 
 <img class="logo-fixed-right" src="misc/logo/maja-braumberger-logo.png" alt="Logo Maja Braumberger" title="Maja Braumberger - logo" />
-
 <div class="bottom-left-wrapper">
+
   <div class="button">
     <map name="noaimini5">
       <area href="https://baccyflap.com/noai" shape="rect" coords="25,16,61,29" target="_blank" alt="no ai webring" title="no ai webring">
