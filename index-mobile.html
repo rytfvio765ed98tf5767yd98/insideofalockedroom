@@ -27,7 +27,7 @@ html, body {
 }
 
 body {
-  background-image: url('maja-braumberger-bg2.webp');
+  background-image: url('maja-braumberger-bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -384,13 +384,16 @@ footer {
 
 .video-container {
   width: 45vw;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
+  max-width: 400px;
+  aspect-ratio: 4 / 3;
   border-radius: 10px;
   overflow: hidden;
   pointer-events: auto; 
   z-index: 20;
+  transform: translateY(15px);
+
 }
+
 
 </style>
 
@@ -458,6 +461,13 @@ footer {
 
 </header>
 
+
+
+<div class="center-wrapper">
+  <div class="video-container">
+    <img class="video-container" src="index.gif" />
+  </div>
+</div>
 
 
 
